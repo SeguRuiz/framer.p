@@ -8,7 +8,6 @@ import MotionPage from "./components/MotionPage";
 import { useEffect } from "react";
 import { useNavigate } from "react-router";
 import Dashboard from "./dashboard/Dashboard";
-import SignIn from "./sign-in/SignIn";
 import SignInCard from "./sign-in-side/components/SignInCard";
 import SignInSide from "./sign-in-side/SignInSide";
 

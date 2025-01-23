@@ -4,7 +4,6 @@ import Home from "../pages/home/Home";
 import MotionPageCont from "./MotionPageCont";
 import Productos from "../pages/home/Productos";
 import { Contactanos } from "../pages/home/Contactanos";
-import SignIn from "../sign-in/SignIn";
 import Dashboard from "../dashboard/Dashboard.jsx"
 
 const pages = {
@@ -21,11 +20,6 @@ const pages = {
   CONTACTENOS: (
     <MotionPageCont key={"Contactenos"}>
       <Contactanos />
-    </MotionPageCont>
-  ),
-  LOGIN: (
-    <MotionPageCont key={"Login"}>
-      <SignIn />
     </MotionPageCont>
   ),
   DASHBOARD: (
