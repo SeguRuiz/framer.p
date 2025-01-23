@@ -19,7 +19,7 @@
   width: 100%;
   color: #1a1a1a;
   
-  margin-top: 5%;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@ body {
   min-height: 100vh;
   background-color: #f9f9ff;
   overflow-x: hidden;
-  scrollbar-color: red blue;
+ 
 }
 
 h1 {

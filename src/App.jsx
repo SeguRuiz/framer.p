@@ -12,9 +12,7 @@ import SignIn from "./sign-in/SignIn";
 import SignInCard from "./sign-in-side/components/SignInCard";
 import SignInSide from "./sign-in-side/SignInSide";
 
-const Pages = [
-  
-];
+const Pages = [];
 
 function App() {
   const location = useLocation();
@@ -28,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Navbar Pages={Pages} currentPath={location.pathname} />
+      {location.pathname != "/admin" && <Navbar Pages={Pages} />}
       <Routes>
         <Route path="/components/:page" element={<MotionPage />} />
         <Route path="/admin" element={<Dashboard />} />
