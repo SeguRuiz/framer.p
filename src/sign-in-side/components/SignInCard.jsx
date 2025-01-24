@@ -100,6 +100,7 @@ export default function SignInCard() {
     .catch(error => {
       console.error('Error al cargar el archivo:', error);
     });
+    
   
   
 
