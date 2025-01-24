@@ -1,9 +1,9 @@
 export const ANIMALES_GANADO_ESPECIES = {
   BOVINO: "BOVINO", //  (Vacas y Toros)
-  OVINOS: "OVINOS", //  (Ovejas)
-  PORCINOS: "PORCINOS", // (Cerdos)
-  CAPRINOS: "CAPRINOS", // (Cabras
-  EQUINOS: "EQUINOS", // (Caballos)
+  OVINOS: "OVINO", //  (Ovejas)
+  PORCINOS: "PORCINO", // (Cerdos)
+  CAPRINOS: "CAPRINO", // (Cabras
+  EQUINOS: "EQUINO", // (Caballos)
   AVES_DE_CORRAL: "AVES_DE_CORRAL", // (Gallinas, Pollos, Pavos, Patos, Gansos)
 };
 
