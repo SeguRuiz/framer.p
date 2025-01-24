@@ -13,6 +13,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword.jsx';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons.jsx';
+import { useNavigate } from "react-router";
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -39,12 +40,14 @@ export default function SignInCard() {
   const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
+  let navigate = useNavigate();
   
   const handleClose = () => {
     setOpen(false);
   };
 
   const handleSubmit = (event) => {
+    event.preventDefault()
     if (emailError || passwordError) {
       event.preventDefault();
       return;
@@ -79,6 +82,27 @@ export default function SignInCard() {
       setPasswordError(false);
       setPasswordErrorMessage('');
     }
+
+
+
+    //LOGIN -----
+    fetch('http://localhost:4000/user')
+    .then(response => response.json())  
+    .then(users => {
+      const user = users.find(u => u.email === "brayan@gmail.com" && u.password === "152255");
+  
+      if (user) {
+        navigate("/admin");
+      } else {
+        console.log("Email o contraseña incorrectos");
+      }
+    })
+    .catch(error => {
+      console.error('Error al cargar el archivo:', error);
+    });
+  
+  
+
 
     return isValid;
   };
@@ -154,6 +178,8 @@ export default function SignInCard() {
         <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
           Iniciar Sesíon
         </Button>
+        <p>Si no tienes tinguna cuenta, registrate aqui <a href="">"Registrarse"</a></p>
+
         {/* <Typography sx={{ textAlign: 'center' }}>
           Don&apos;t have an account?{' '}
           <span>
