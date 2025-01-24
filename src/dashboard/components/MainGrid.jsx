@@ -9,8 +9,11 @@ import CustomizedTreeView from './CustomizedTreeView.jsx';
 import CustomizedDataGrid from './CustomizedDataGrid.jsx';
 import HighlightedCard from './HighlightedCard.jsx';
 import PageViewsBarChart from './PageViewsBarChart.jsx';
+import { useLocation } from 'react-router';
 import SessionsChart from './SessionsChart.jsx';
 import StatCard from './StatCard.jsx';
+import { PAGINAS_ADMIN } from '../../constants/Paginas.d.js';
+import { useSelector } from 'react-redux';
 
 //////// Estos objetos es la data de los primeros 3 graficos
 const data = [
@@ -47,12 +50,15 @@ const data = [
 ];
 
 export default function MainGrid() {
+ const {page} = useSelector(x => x.Page)
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px' } }}>
+    
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Overview
       </Typography>
+      
       <Grid
         container
         spacing={2}
@@ -87,6 +93,7 @@ export default function MainGrid() {
         </Grid>
       </Grid>
       <Copyright sx={{ my: 4 }} />
+    
     </Box>
   );
 }

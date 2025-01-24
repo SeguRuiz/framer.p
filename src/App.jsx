@@ -27,8 +27,8 @@ function App() {
     <>
       {location.pathname != "/admin" && <Navbar Pages={Pages} />}
       <Routes>
-        <Route path="/components/:page" element={<MotionPage />} />
-        <Route path="/admin" element={<Dashboard />} />
+       
+        <Route path="/admin/:parte" element={<Dashboard />} />
         <Route path="/" element={<SignInSide />} />
       </Routes>
     </>
