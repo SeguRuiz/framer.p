@@ -73,9 +73,9 @@ export function renderAvatar(params) {
     </Avatar>
   );
 }
-
+///// Columnas del listado principal
 export const columns = [
-  { field: 'pageTitle', headerName: 'Page Title', flex: 1.5, minWidth: 200 },
+  { field: 'id', headerName: 'ID', flex: 1.5, minWidth: 50 },
   {
     field: 'status',
     headerName: 'Status',

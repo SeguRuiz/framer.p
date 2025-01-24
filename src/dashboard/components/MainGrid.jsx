@@ -12,6 +12,7 @@ import PageViewsBarChart from './PageViewsBarChart.jsx';
 import SessionsChart from './SessionsChart.jsx';
 import StatCard from './StatCard.jsx';
 
+//////// Estos objetos es la data de los primeros 3 graficos
 const data = [
   {
     title: 'Users',
@@ -59,14 +60,12 @@ export default function MainGrid() {
         sx={{ mb: (theme) => theme.spacing(2) }}
       >
         {data.map((card, index) => (
-          <Grid key={index} size={{ xs: 12, sm: 6, lg: 3 }}>
+          <Grid key={index} size={{ xs: 12, sm: 6, lg: 4 }}>
             <StatCard {...card} />
           </Grid>
         ))}
-        <Grid size={{ xs: 12, sm: 6, lg: 3 }}>
-          <HighlightedCard />
-        </Grid>
-        <Grid size={{ xs: 12, md: 6 }}>
+       
+        <Grid size={{ xs: 10, md: 6 }}>
           <SessionsChart />
         </Grid>
         <Grid size={{ xs: 12, md: 6 }}>
@@ -82,7 +81,7 @@ export default function MainGrid() {
         </Grid>
         <Grid size={{ xs: 12, lg: 3 }}>
           <Stack gap={2} direction={{ xs: 'column', sm: 'row', lg: 'column' }}>
-            <CustomizedTreeView />
+            {/* <CustomizedTreeView /> */}
             <ChartUserByCountry />
           </Stack>
         </Grid>

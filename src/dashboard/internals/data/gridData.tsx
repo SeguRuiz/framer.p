@@ -78,6 +78,7 @@ export function renderAvatar(
   );
 }
 
+///// Columnas del listado principal
 export const columns: GridColDef[] = [
   { field: 'pageTitle', headerName: 'Page Title', flex: 1.5, minWidth: 200 },
   {
