@@ -13,7 +13,3 @@
 <!-- #default-branch-switch -->
 
 View the demo at https://mui.com/material-ui/getting-started/templates/sign-in-side/.
-
-
-
-hola
