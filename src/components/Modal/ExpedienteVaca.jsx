@@ -41,7 +41,6 @@ const ExpedienteModal = ({
       LAT: "0",
       LNG: "0",
     },
-
     PAZO_LOS_LIMITES: 0,
   });
   useEffect(() => {
@@ -67,17 +66,18 @@ const ExpedienteModal = ({
         fullWidth={fullWidth}
       >
         <Card sx={{
-         
+         width: '70vh'
         }}>
           <CardHeader
             title={animalData.NOMBRE}
             subheader={animalData.ESPECIE}
+           
           />
           <CardMedia sx={{ height: "30vh" }} />
 
           <Stack
             direction={"row"}
-            justifyContent={"space-between"}
+            justifyContent={"space-around"}
             gap={"77px"}
           >
             <Box
