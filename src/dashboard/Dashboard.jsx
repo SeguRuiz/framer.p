@@ -67,6 +67,7 @@ export default function Dashboard(props) {
             {page == PAGINAS_ADMIN.HOME ? (
               <>
                 <Header />
+
                 <MainGrid />
               </>
             ) : null}
@@ -83,6 +84,7 @@ export default function Dashboard(props) {
           </Stack>
         </Box>
       </Box>
+
     </AppTheme>
   );
 }

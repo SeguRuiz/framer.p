@@ -86,7 +86,7 @@ export default function SignInCard() {
 
 
     //LOGIN -----
-    fetch('http://localhost:4000/user')
+    fetch('http://localhost:4000/usuarios')
     .then(response => response.json())  
     .then(users => {
       const user = users.find(u => u.email === "brayan@gmail.com" && u.password === "152255");
