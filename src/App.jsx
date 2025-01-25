@@ -1,35 +1,38 @@
-import { Route } from "react-router";
-import Home from "./pages/home/Home";
+import { Route, useNavigate } from "react-router";
 import Navbar from "./components/Navbar";
 import { Routes } from "react-router";
 import { useLocation } from "react-router";
 
-import MotionPage from "./components/MotionPage";
 import { useEffect } from "react";
-import { useNavigate } from "react-router";
+
 import Dashboard from "./dashboard/Dashboard";
-import SignInCard from "./sign-in-side/components/SignInCard";
+
 import SignInSide from "./sign-in-side/SignInSide";
+import { getCookie } from "./utils/cookies";
+
+import PCambio_estado from "./pages/PCambio_estado/PCambio_estado";
 
 const Pages = [];
 
 function App() {
   const location = useLocation();
+  const userInfo = getCookie("data");
   const navigate = useNavigate();
 
   useEffect(() => {
-    // location.pathname == "/" && navigate("/components/scroll");
-
-    window.scrollTo(0, 0);
+    userInfo && navigate("/admin/home");
   }, [location.pathname]);
 
   return (
     <>
-      {location.pathname != "/admin" && <Navbar Pages={Pages} />}
+      {!userInfo ? <Navbar Pages={Pages} /> : null}
       <Routes>
-       
-        <Route path="/admin/:parte" element={<Dashboard />} />
-        <Route path="/" element={<SignInSide />} />
+        {userInfo != "" && (
+          <Route path="/admin/:seccion" element={<Dashboard />} />
+        )}
+        {!userInfo && <Route path="/" element={<SignInSide />} />}
+        <Route path="/estado" element={<PCambio_estado/>} />
+
       </Routes>
     </>
   );

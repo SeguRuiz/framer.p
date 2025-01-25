@@ -2,17 +2,17 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import MuiCard from '@mui/material/Card';
-import Checkbox from '@mui/material/Checkbox';
-import Divider from '@mui/material/Divider';
+
+import { LogIn } from '../../services/Usuarios/GetUsuarios.jsx';
+import { setCookie } from '../../utils/cookies.js';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Link from '@mui/material/Link';
+
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import ForgotPassword from './ForgotPassword.jsx';
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons.jsx';
+import {SitemarkIcon } from './CustomIcons.jsx';
 import { useNavigate } from "react-router";
 
 const Card = styled(MuiCard)(({ theme }) => ({
@@ -46,17 +46,29 @@ export default function SignInCard() {
     setOpen(false);
   };
 
-  const handleSubmit = (event) => {
+
+
+  const handleSubmit = async (event) => {
     event.preventDefault()
     if (emailError || passwordError) {
       event.preventDefault();
       return;
     }
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const [status, dt] = await LogIn(data.get("email"), data.get("password"));
+
+  
+    if (dt.length == 0) {
+      setEmailError(true);
+      setEmailErrorMessage(
+        "Tus datos no han sido encontrados, intenta denuevo"
+      );
+    } else {
+      navigate("/admin/home");
+      setCookie('data', btoa(dt[0].id), 2);
+    }
+
   };
 
   const validateInputs = () => {
@@ -85,26 +97,7 @@ export default function SignInCard() {
 
 
 
-    //LOGIN -----
-    fetch('http://localhost:4000/usuarios')
-    .then(response => response.json())  
-    .then(users => {
-      const user = users.find(u => u.email === "brayan@gmail.com" && u.password === "152255");
   
-      if (user) {
-        navigate("/admin");
-      } else {
-        console.log("Email o contraseña incorrectos");
-      }
-    })
-    .catch(error => {
-      console.error('Error al cargar el archivo:', error);
-    });
-    
-  
-  
-
-
     return isValid;
   };
 

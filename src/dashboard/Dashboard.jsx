@@ -31,6 +31,7 @@ const xThemeComponents = {
 
 export default function Dashboard(props) {
   const { page } = useSelector((x) => x.Page);
+ 
   const location = useLocation();
   const accion = useDispatch()
   
@@ -38,13 +39,14 @@ export default function Dashboard(props) {
     accion(set_page(location.pathname.split("/")[2]));
   }, [location.pathname]);
 
+  
+
   return (
     <AppTheme {...props} themeComponents={xThemeComponents}>
       <CssBaseline enableColorScheme />
       <Box sx={{ display: "flex" }}>
         <SideMenu />
         <AppNavbar />
-        {/* Main content */}
         <Box
           component="main"
           sx={(theme) => ({
