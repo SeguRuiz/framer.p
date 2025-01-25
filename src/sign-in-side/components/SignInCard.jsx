@@ -1,122 +1,114 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import MuiCard from '@mui/material/Card';
-import Checkbox from '@mui/material/Checkbox';
-import Divider from '@mui/material/Divider';
-import FormLabel from '@mui/material/FormLabel';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Link from '@mui/material/Link';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import { styled } from '@mui/material/styles';
-import ForgotPassword from './ForgotPassword.jsx';
-import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons.jsx';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import MuiCard from "@mui/material/Card";
+import Checkbox from "@mui/material/Checkbox";
+import Divider from "@mui/material/Divider";
+import FormLabel from "@mui/material/FormLabel";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Link from "@mui/material/Link";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
+import ForgotPassword from "./ForgotPassword.jsx";
+import { GoogleIcon, FacebookIcon, SitemarkIcon } from "./CustomIcons.jsx";
 import { useNavigate } from "react-router";
+import { LogIn } from "../../services/Usuarios/GetUsuarios.jsx";
+import { setCookie } from "../../utils/cookies.js";
 
 const Card = styled(MuiCard)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignSelf: 'center',
-  width: '100%',
+  display: "flex",
+  flexDirection: "column",
+  alignSelf: "center",
+  width: "100%",
   padding: theme.spacing(4),
   gap: theme.spacing(2),
   boxShadow:
-    'hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px',
-  [theme.breakpoints.up('sm')]: {
-    width: '450px',
+    "hsla(220, 30%, 5%, 0.05) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.05) 0px 15px 35px -5px",
+  [theme.breakpoints.up("sm")]: {
+    width: "450px",
   },
-  ...theme.applyStyles('dark', {
+  ...theme.applyStyles("dark", {
     boxShadow:
-      'hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px',
+      "hsla(220, 30%, 5%, 0.5) 0px 5px 15px 0px, hsla(220, 25%, 10%, 0.08) 0px 15px 35px -5px",
   }),
 }));
 
 export default function SignInCard() {
   const [emailError, setEmailError] = React.useState(false);
-  const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
+  const [emailErrorMessage, setEmailErrorMessage] = React.useState("");
   const [passwordError, setPasswordError] = React.useState(false);
-  const [passwordErrorMessage, setPasswordErrorMessage] = React.useState('');
+  const [passwordErrorMessage, setPasswordErrorMessage] = React.useState("");
   const [open, setOpen] = React.useState(false);
 
   let navigate = useNavigate();
-  
+
   const handleClose = () => {
     setOpen(false);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const handleSubmit = async (event) => {
+    event.preventDefault();
     if (emailError || passwordError) {
       event.preventDefault();
       return;
     }
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+
+    const [status, dt] = await LogIn(data.get("email"), data.get("password"));
+
+    if (dt.length == 0) {
+      setEmailError(true);
+      setEmailErrorMessage(
+        "Tus datos no han sido encontrados, intenta denuevo"
+      );
+    } else {
+      navigate("/admin/home");
+      setCookie('data', btoa(dt[0].id), 2);
+    }
+
+    
   };
 
   const validateInputs = () => {
-    const email = document.getElementById('email');
-    const password = document.getElementById('password');
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
 
     let isValid = true;
 
     if (!email.value || !/\S+@\S+\.\S+/.test(email.value)) {
       setEmailError(true);
-      setEmailErrorMessage('Porfavor escribe un email valido.');
+      setEmailErrorMessage("Porfavor escribe un email valido.");
       isValid = false;
     } else {
       setEmailError(false);
-      setEmailErrorMessage('');
+      setEmailErrorMessage("");
     }
 
     if (!password.value || password.value.length < 6) {
       setPasswordError(true);
-      setPasswordErrorMessage('La contraseña debe ser almenos 6 caracteres de largo.');
+      setPasswordErrorMessage(
+        "La contraseña debe ser almenos 6 caracteres de largo."
+      );
       isValid = false;
     } else {
       setPasswordError(false);
-      setPasswordErrorMessage('');
+      setPasswordErrorMessage("");
     }
-
-
-
-    //LOGIN -----
-    fetch('http://localhost:4000/user')
-    .then(response => response.json())  
-    .then(users => {
-      const user = users.find(u => u.email === "brayan@gmail.com" && u.password === "152255");
-  
-      if (user) {
-        navigate("/admin");
-      } else {
-        console.log("Email o contraseña incorrectos");
-      }
-    })
-    .catch(error => {
-      console.error('Error al cargar el archivo:', error);
-    });
-    
-  
-  
-
 
     return isValid;
   };
 
   return (
     <Card variant="outlined">
-      <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+      <Box sx={{ display: { xs: "flex", md: "none" } }}>
         <SitemarkIcon />
       </Box>
       <Typography
         component="h1"
         variant="h4"
-        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
+        sx={{ width: "100%", fontSize: "clamp(2rem, 10vw, 2.15rem)" }}
       >
         Log in
       </Typography>
@@ -124,7 +116,7 @@ export default function SignInCard() {
         component="form"
         onSubmit={handleSubmit}
         noValidate
-        sx={{ display: 'flex', flexDirection: 'column', width: '100%', gap: 2 }}
+        sx={{ display: "flex", flexDirection: "column", width: "100%", gap: 2 }}
       >
         <FormControl>
           <FormLabel htmlFor="email">Correo</FormLabel>
@@ -140,11 +132,11 @@ export default function SignInCard() {
             required
             fullWidth
             variant="outlined"
-            color={emailError ? 'error' : 'primary'}
+            color={emailError ? "error" : "primary"}
           />
         </FormControl>
         <FormControl>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <FormLabel htmlFor="password">Contraseña</FormLabel>
             {/* <Link
               component="button"
@@ -168,7 +160,7 @@ export default function SignInCard() {
             required
             fullWidth
             variant="outlined"
-            color={passwordError ? 'error' : 'primary'}
+            color={passwordError ? "error" : "primary"}
           />
         </FormControl>
         {/* <FormControlLabel
@@ -176,10 +168,18 @@ export default function SignInCard() {
           label="Remember me"
         /> */}
         <ForgotPassword open={open} handleClose={handleClose} />
-        <Button type="submit" fullWidth variant="contained" onClick={validateInputs}>
+        <Button
+          type="submit"
+          fullWidth
+          variant="contained"
+          onClick={validateInputs}
+        >
           Iniciar Sesíon
         </Button>
-        <p>Si no tienes tinguna cuenta, registrate aqui <a href="">"Registrarse"</a></p>
+        <p>
+          Si no tienes tinguna cuenta, registrate aqui{" "}
+          <a href="">"Registrarse"</a>
+        </p>
 
         {/* <Typography sx={{ textAlign: 'center' }}>
           Don&apos;t have an account?{' '}
