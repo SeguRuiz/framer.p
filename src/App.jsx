@@ -10,6 +10,8 @@ import Dashboard from "./dashboard/Dashboard";
 import SignInSide from "./sign-in-side/SignInSide";
 import { getCookie } from "./utils/cookies";
 
+import PCambio_estado from "./pages/PCambio_estado/PCambio_estado";
+
 const Pages = [];
 
 function App() {
@@ -29,6 +31,8 @@ function App() {
           <Route path="/admin/:seccion" element={<Dashboard />} />
         )}
         {!userInfo && <Route path="/" element={<SignInSide />} />}
+        <Route path="/estado" element={<PCambio_estado/>} />
+
       </Routes>
     </>
   );
