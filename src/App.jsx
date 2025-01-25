@@ -20,7 +20,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    userInfo && !location.pathname.includes('admin') && navigate("/admin/home");
+    // userInfo && !location.pathname.includes('admin') && navigate("/admin/home");
   }, [location.pathname]);
 
   return (
