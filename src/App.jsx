@@ -29,6 +29,8 @@ function App() {
           <Route path="/admin/:seccion" element={<Dashboard />} />
         )}
         {!userInfo && <Route path="/" element={<SignInSide />} />}
+     
+
       </Routes>
     </>
   );
