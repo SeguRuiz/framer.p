@@ -1,5 +1,4 @@
 import { Route, useNavigate } from "react-router";
-import Home from "./pages/home/Home";
 import Navbar from "./components/Navbar";
 import { Routes } from "react-router";
 import { useLocation } from "react-router";

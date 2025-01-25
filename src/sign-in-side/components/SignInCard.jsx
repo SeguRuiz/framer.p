@@ -101,7 +101,7 @@ export default function SignInCard() {
       console.error('Error al cargar el archivo:', error);
     });
     
-  
+    
   
 
 
