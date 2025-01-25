@@ -21,4 +21,5 @@ async function GetAnimales() {
     }
 }
 
+
 export default GetAnimales

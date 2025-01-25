@@ -2,18 +2,14 @@ import {
   Box,
   Button,
   Card,
-  CardContent,
   CardHeader,
   CardMedia,
   Dialog,
   DialogActions,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   Stack,
-  Typography,
 } from "@mui/material";
+
+import { useEffect, useState } from "react";
 import MedicalInformationRoundedIcon from "@mui/icons-material/MedicalInformationRounded";
 import MonitorHeartRoundedIcon from "@mui/icons-material/MonitorHeartRounded";
 import MaleRoundedIcon from "@mui/icons-material/MaleRounded";
@@ -22,8 +18,8 @@ import CakeRoundedIcon from "@mui/icons-material/CakeRounded";
 import ThermostatRoundedIcon from "@mui/icons-material/ThermostatRounded";
 import FmdGoodRoundedIcon from "@mui/icons-material/FmdGoodRounded";
 import ExploreOffRoundedIcon from "@mui/icons-material/ExploreOffRounded";
-import ArticleRoundedIcon from "@mui/icons-material/ArticleRounded";
 import FileDownloadRoundedIcon from "@mui/icons-material/FileDownloadRounded";
+import { GetAnimal } from "../../services/Animales/GetAnimales";
 const ExpedienteModal = ({
   open = false,
   maxWidth = 30,
@@ -32,6 +28,33 @@ const ExpedienteModal = ({
   setId,
   id = null,
 }) => {
+  const [animalData, setAnimalData] = useState({
+    NOMBRE: "",
+    ESTADO: "",
+    SEXO: "",
+    PESO: "",
+    ESPECIE: "",
+    EDAD: 0,
+    RM: 0,
+    TEMPERATURA: "",
+    UBICACION: {
+      LAT: "0",
+      LNG: "0",
+    },
+
+    PAZO_LOS_LIMITES: 0,
+  });
+  useEffect(() => {
+    (async () => {
+      if (id) {
+        const [status, animal] = await GetAnimal(id);
+
+        if (status == 200) {
+          setAnimalData(animal);
+        }
+      }
+    })();
+  }, [id]);
   return (
     <>
       <Dialog
@@ -43,17 +66,19 @@ const ExpedienteModal = ({
         maxWidth={maxWidth}
         fullWidth={fullWidth}
       >
-        <Card sx={{ width: "vh" }}>
+        <Card sx={{
+         
+        }}>
           <CardHeader
-            title={"Nombre animal"}
-            subheader={"Especie del animal"}
+            title={animalData.NOMBRE}
+            subheader={animalData.ESPECIE}
           />
           <CardMedia sx={{ height: "30vh" }} />
 
           <Stack
             direction={"row"}
             justifyContent={"space-between"}
-            gap={"70px"}
+            gap={"77px"}
           >
             <Box
               sx={{
@@ -63,16 +88,16 @@ const ExpedienteModal = ({
               }}
             >
               <CardHeader
-                title={"Estado del animal"}
+                title={animalData.ESTADO}
                 avatar={<MedicalInformationRoundedIcon />}
               />
               <CardHeader
-                title={"Ritmo cardiaco"}
+                title={animalData.RM}
                 avatar={<MonitorHeartRoundedIcon />}
               />
 
-              <CardHeader title={"Edad"} avatar={<CakeRoundedIcon />} />
-              <CardHeader title={"ubicacion"} avatar={<FmdGoodRoundedIcon />} />
+              <CardHeader title={animalData.EDAD} avatar={<CakeRoundedIcon />} />
+              <CardHeader title={`${animalData.UBICACION.LAT}-${animalData.UBICACION.LNG}`} avatar={<FmdGoodRoundedIcon />} />
             </Box>
             <Box
               sx={{
@@ -82,17 +107,20 @@ const ExpedienteModal = ({
               }}
             >
               <CardHeader
-                title={"Temperatura"}
+                title={animalData.TEMPERATURA}
                 avatar={<ThermostatRoundedIcon />}
               />
 
               <CardHeader
-                title={"Ritmo cardiaco"}
+                title={animalData.SEXO}
                 avatar={<MaleRoundedIcon />}
               />
-              <CardHeader title={"Peso"} avatar={<ScaleRoundedIcon />} />
               <CardHeader
-                title={"fuera de los limites"}
+                title={animalData.PESO}
+                avatar={<ScaleRoundedIcon />}
+              />
+              <CardHeader
+                title={animalData.PAZO_LOS_LIMITES}
                 avatar={<ExploreOffRoundedIcon />}
               />
             </Box>

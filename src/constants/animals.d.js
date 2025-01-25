@@ -13,3 +13,8 @@ export const ANIMALES_ESTADO = {
   AGITADO: "AGITADO",
   SANO: "SANO",
 };
+
+export const GENDERS_ANIMALS = {
+  HEMBRA: 'HEMBRA',
+  MACHO: 'MACHO'
+}
