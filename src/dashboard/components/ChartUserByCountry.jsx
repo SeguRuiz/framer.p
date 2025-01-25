@@ -9,47 +9,8 @@ import CardContent from '@mui/material/CardContent';
 import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
-
-import {
-  IndiaFlag,
-  UsaFlag,
-  BrazilFlag,
-  GlobeFlag,
-} from '../internals/components/CustomIcons.jsx';
-
-const data = [
-  { label: 'India', value: 50000 },
-  { label: 'USA', value: 35000 },
-  { label: 'Brazil', value: 10000 },
-  { label: 'Other', value: 5000 },
-];
-
-const countries = [
-  {
-    name: 'India',
-    value: 50,
-    flag: <IndiaFlag />,
-    color: 'hsl(220, 25%, 65%)',
-  },
-  {
-    name: 'USA',
-    value: 35,
-    flag: <UsaFlag />,
-    color: 'hsl(220, 25%, 45%)',
-  },
-  {
-    name: 'Brazil',
-    value: 10,
-    flag: <BrazilFlag />,
-    color: 'hsl(220, 25%, 30%)',
-  },
-  {
-    name: 'Other',
-    value: 5,
-    flag: <GlobeFlag />,
-    color: 'hsl(220, 25%, 20%)',
-  },
-];
+import { useState, useEffect } from 'react';
+import GetAnimales from '../Services/GetAnimales.jsx';  
 
 const StyledText = styled('text', {
   shouldForwardProp: (prop) => prop !== 'variant',
@@ -116,9 +77,36 @@ const colors = [
   'hsl(220, 20%, 42%)',
   'hsl(220, 20%, 35%)',
   'hsl(220, 20%, 25%)',
+  'hsl(220, 20%, 18%)',
 ];
 
-export default function ChartUserByCountry() {
+export default function ChartUserBySpecies() {
+  const [animales, setAnimales] = useState([]);
+  const [data, setData] = useState([]);
+
+  // Obtener los datos de los animales
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const animalesData = await GetAnimales();
+        setAnimales(animalesData);
+
+        // Obtener especies únicas
+        const especies = [...new Set(animalesData.map(animal => animal.ESPECIE))]; // Obtener especies únicas
+        const newData = especies.map(especie => {
+          const count = animalesData.filter(animal => animal.ESPECIE === especie).length;
+          return { label: especie, value: count };
+        });
+
+        setData(newData);
+      } catch (error) {
+        console.error('Error al obtener los animales:', error);
+      }
+    }
+
+    fetchData();
+  }, []);
+
   return (
     <Card
       variant="outlined"
@@ -126,7 +114,7 @@ export default function ChartUserByCountry() {
     >
       <CardContent>
         <Typography component="h2" variant="subtitle2">
-          Users by country
+          Animales por especie
         </Typography>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <PieChart
@@ -152,43 +140,30 @@ export default function ChartUserByCountry() {
               legend: { hidden: true },
             }}
           >
-            <PieCenterLabel primaryText="98.5K" secondaryText="Total" />
+            <PieCenterLabel primaryText="Total" secondaryText={`${data.reduce((acc, item) => acc + item.value, 0)} Animales`} />
           </PieChart>
         </Box>
-        {countries.map((country, index) => (
+        {data.map((item, index) => (
           <Stack
             key={index}
             direction="row"
             sx={{ alignItems: 'center', gap: 2, pb: 2 }}
           >
-            {country.flag}
-            <Stack sx={{ gap: 1, flexGrow: 1 }}>
-              <Stack
-                direction="row"
-                sx={{
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                  gap: 2,
-                }}
-              >
-                <Typography variant="body2" sx={{ fontWeight: '500' }}>
-                  {country.name}
-                </Typography>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                  {country.value}%
-                </Typography>
-              </Stack>
-              <LinearProgress
-                variant="determinate"
-                aria-label="Number of users by country"
-                value={country.value}
-                sx={{
-                  [`& .${linearProgressClasses.bar}`]: {
-                    backgroundColor: country.color,
-                  },
-                }}
-              />
-            </Stack>
+            <Typography variant="body2" sx={{ fontWeight: '500' }}>
+              {item.label}
+            </Typography>
+            <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+              {item.value} animales
+            </Typography>
+            <LinearProgress
+              variant="determinate"
+              value={item.value}
+              sx={{
+                [`& .${linearProgressClasses.bar}`]: {
+                  backgroundColor: colors[index % colors.length], // Esto maneja el ciclo de colores
+                },
+              }}
+            />
           </Stack>
         ))}
       </CardContent>
