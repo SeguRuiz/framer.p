@@ -62,11 +62,11 @@ export default function OptionsMenu() {
           },
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
+        <MenuItem onClick={handleClose}>Perfil</MenuItem>
+        <MenuItem onClick={handleClose}>Mi Cuenta</MenuItem>
         <Divider />
-        <MenuItem onClick={handleClose}>Add another account</MenuItem>
-        <MenuItem onClick={handleClose}>Settings</MenuItem>
+        <MenuItem onClick={handleClose}>Añadir otra cuenta</MenuItem>
+        <MenuItem onClick={handleClose}>configuracion</MenuItem>
         <Divider />
         <MenuItem
           onClick={logOut}
