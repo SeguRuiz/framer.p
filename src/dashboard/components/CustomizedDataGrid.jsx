@@ -1,12 +1,29 @@
 import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { columns, rows } from '../internals/data/gridData.jsx';
+import GetAnimales from '../../services/Animales/GetAnimales.jsx';
 
 export default function CustomizedDataGrid() {
+  const [animales, setAnimales] = React.useState([])
+  React.useEffect(()=>{
+    async function mostrarAnimales() {
+      try {
+        
+          const animales = await GetAnimales();
+         
+          
+          setAnimales(animales)
+      } catch (error) {
+          console.error('Error al obtener los animales:', error);
+      }
+    }
+    
+    mostrarAnimales();
+  },[])
   return (
     <DataGrid
       checkboxSelection
-      rows={rows}
+      rows={animales}
       columns={columns}
       getRowClassName={(params) =>
         params.indexRelativeToCurrentPage % 2 === 0 ? 'even' : 'odd'
