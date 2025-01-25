@@ -67,6 +67,8 @@ export default function SignInCard() {
       navigate("/admin/home");
       setCookie('data', btoa(dt[0].id), 2);
     }
+
+    
   };
 
   const validateInputs = () => {
