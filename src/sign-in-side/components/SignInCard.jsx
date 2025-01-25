@@ -48,6 +48,8 @@ export default function SignInCard() {
     setOpen(false);
   };
 
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (emailError || passwordError) {
@@ -58,6 +60,7 @@ export default function SignInCard() {
 
     const [status, dt] = await LogIn(data.get("email"), data.get("password"));
 
+  
     if (dt.length == 0) {
       setEmailError(true);
       setEmailErrorMessage(
@@ -68,7 +71,6 @@ export default function SignInCard() {
       setCookie('data', btoa(dt[0].id), 2);
     }
 
-    
   };
 
   const validateInputs = () => {
