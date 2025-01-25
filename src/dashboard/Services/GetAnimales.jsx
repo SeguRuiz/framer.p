@@ -13,7 +13,7 @@ async function GetAnimales() {
         }
 
         const Datos = await response.json();
-        console.log('Datos obtenidos:', Datos);
+      
         return Datos;
     } catch (error) {
         console.error('Hubo un error al hacer la consulta HTTP del servidor', error);

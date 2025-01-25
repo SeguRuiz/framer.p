@@ -1,11 +1,12 @@
-import * as React from 'react';
-import { useTheme } from '@mui/material/styles';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Chip from '@mui/material/Chip';
-import Typography from '@mui/material/Typography';
-import Stack from '@mui/material/Stack';
-import { LineChart } from '@mui/x-charts/LineChart';
+import * as React from "react";
+import { useTheme } from "@mui/material/styles";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import Chip from "@mui/material/Chip";
+import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import { LineChart } from "@mui/x-charts/LineChart";
+import { GetAnimalesEstado } from "../../services/Animales/GetAnimales";
 
 function AreaGradient({ color, id }: { color: string; id: string }) {
   return (
@@ -20,8 +21,8 @@ function AreaGradient({ color, id }: { color: string; id: string }) {
 
 function getDaysInMonth(month: number, year: number) {
   const date = new Date(year, month, 0);
-  const monthName = date.toLocaleDateString('en-US', {
-    month: 'short',
+  const monthName = date.toLocaleDateString("en-US", {
+    month: "short",
   });
   const daysInMonth = date.getDate();
   const days = [];
@@ -37,6 +38,17 @@ export default function SessionsChart() {
   const theme = useTheme();
   const data = getDaysInMonth(4, 2024);
 
+  React.useEffect(() => {
+    (async () => {
+      const [animalesMuertos, animalesSanos] = await Promise.all([
+        GetAnimalesEstado("MUERTO"),
+        GetAnimalesEstado("SANO"),
+      ]);
+
+      console.log(animalesMuertos, animalesSanos);
+    })();
+  }, []);
+
   const colorPalette = [
     theme.palette.primary.light,
     theme.palette.primary.main,
@@ -44,17 +56,17 @@ export default function SessionsChart() {
   ];
 
   return (
-    <Card variant="outlined" sx={{ width: '100%' }}>
+    <Card variant="outlined" sx={{ width: "100%" }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
           Sessions
         </Typography>
-        <Stack sx={{ justifyContent: 'space-between' }}>
+        <Stack sx={{ justifyContent: "space-between" }}>
           <Stack
             direction="row"
             sx={{
-              alignContent: { xs: 'center', sm: 'flex-start' },
-              alignItems: 'center',
+              alignContent: { xs: "center", sm: "flex-start" },
+              alignItems: "center",
               gap: 1,
             }}
           >
@@ -63,7 +75,7 @@ export default function SessionsChart() {
             </Typography>
             <Chip size="small" color="success" label="+35%" />
           </Stack>
-          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+          <Typography variant="caption" sx={{ color: "text.secondary" }}>
             Sessions per day for the last 30 days
           </Typography>
         </Stack>
@@ -71,24 +83,23 @@ export default function SessionsChart() {
           colors={colorPalette}
           xAxis={[
             {
-              scaleType: 'point',
+              scaleType: "point",
               data,
               tickInterval: (index, i) => (i + 1) % 5 === 0,
             },
           ]}
-          series={[
-          ]}
+          series={[]}
           height={250}
           margin={{ left: 50, right: 20, top: 20, bottom: 20 }}
           grid={{ horizontal: true }}
           sx={{
-            '& .MuiAreaElement-series-organic': {
+            "& .MuiAreaElement-series-organic": {
               fill: "url('#organic')",
             },
-            '& .MuiAreaElement-series-referral': {
+            "& .MuiAreaElement-series-referral": {
               fill: "url('#referral')",
             },
-            '& .MuiAreaElement-series-direct': {
+            "& .MuiAreaElement-series-direct": {
               fill: "url('#direct')",
             },
           }}

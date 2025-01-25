@@ -31,4 +31,17 @@ export const GetAnimal = async (id = null) => {
   }
 };
 
+export const GetAnimalesEstado = async (estado = "") => {
+  try {
+    const response = await fetch(
+      `http://localhost:4000/animales?ESTADO=${estado}`
+    );
+    const data = await response.json();
+    return [response.status, data];
+  } catch (error) {
+    console.log(error);
+    return [500, null];
+  }
+};
+
 export default GetAnimales;
