@@ -6,6 +6,8 @@ import Typography from '@mui/material/Typography';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 
 export default function CardAlert() {
+
+  
   return (
     <Card variant="outlined" sx={{ m: 1.5, flexShrink: 0 }}>
       <CardContent>

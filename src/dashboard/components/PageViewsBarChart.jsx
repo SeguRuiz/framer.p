@@ -1,4 +1,5 @@
-import * as React from 'react';
+import React, { useEffect, useState } from 'react';
+import GetAnimales from '../Services/GetAnimales.jsx'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
@@ -8,37 +9,55 @@ import { BarChart } from '@mui/x-charts/BarChart';
 import { useTheme } from '@mui/material/styles';
 
 export default function PageViewsBarChart() {
+  const [animales, setAnimales] = useState([]);
   const theme = useTheme();
   const colorPalette = [
     (theme.vars || theme).palette.primary.dark,
     (theme.vars || theme).palette.primary.main,
     (theme.vars || theme).palette.primary.light,
   ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const animalesData = await GetAnimales();
+        setAnimales(animalesData); // Establecer los animales en el estado
+      } catch (error) {
+        console.error("Error al obtener los datos", error.message); 
+        console.error("Detalles del error:", error); 
+      }
+    };
+  
+    fetchData();
+  }, []);
+  
 
+  //Transformar los datos de los animales
+  const data = animales.map(animal => ({
+    nombre: animal.NOMBRE,
+    peso: animal.PESO,
+    estado: animal.PESO < 100 ? "Desnutrida" : "Peso Idóneo"
+  }));
+
+  //  Preparar los datos para el gráfico
+  const chartData = data.map(animal => animal.peso);
+  
   return (
     <Card variant="outlined" sx={{ width: '100%' }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Page views and downloads
+          Estado de salud de los animales
         </Typography>
         <Stack sx={{ justifyContent: 'space-between' }}>
-          <Stack
-            direction="row"
-            sx={{
-              alignContent: { xs: 'center', sm: 'flex-start' },
-              alignItems: 'center',
-              gap: 1,
-            }}
-          >
+          <Stack direction="row" sx={{ alignContent: { xs: 'center', sm: 'flex-start' }, alignItems: 'center', gap: 1 }}>
             <Typography variant="h4" component="p">
-              1.3M
+              {animales.length} Animales
             </Typography>
-            <Chip size="small" color="error" label="-8%" />
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Page views and downloads for the last 6 months
+            Pesos de los animales y su estado de salud
           </Typography>
         </Stack>
+
         <BarChart
           borderRadius={8}
           colors={colorPalette}
@@ -46,26 +65,14 @@ export default function PageViewsBarChart() {
             {
               scaleType: 'band',
               categoryGapRatio: 0.5,
-              data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+              data: data.map(animal => animal.nombre), // Nombres de los animales
             },
           ]}
           series={[
             {
-              id: 'page-views',
-              label: 'Page views',
-              data: [2234, 3872, 2998, 4125, 3357, 2789, 2998],
-              stack: 'A',
-            },
-            {
-              id: 'downloads',
-              label: 'Downloads',
-              data: [3098, 4215, 2384, 2101, 4752, 3593, 2384],
-              stack: 'A',
-            },
-            {
-              id: 'conversions',
-              label: 'Conversions',
-              data: [4051, 2275, 3129, 4693, 3904, 2038, 2275],
+              id: 'peso',
+              label: 'Peso',
+              data: chartData,
               stack: 'A',
             },
           ]}

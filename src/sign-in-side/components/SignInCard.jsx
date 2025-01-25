@@ -58,7 +58,6 @@ export default function SignInCard() {
 
     const [status, dt] = await LogIn(data.get("email"), data.get("password"));
 
-  
     if (dt.length == 0) {
       setEmailError(true);
       setEmailErrorMessage(
