@@ -2,7 +2,25 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../internals/data/gridData.jsx";
 import ExpedienteModal from "../../components/Modal/ExpedienteVaca.jsx";
+import GetAnimales from '../../services/Animales/GetAnimales.jsx';
+
 export default function CustomizedDataGrid() {
+  const [animales, setAnimales] = React.useState([])
+  React.useEffect(()=>{
+    async function mostrarAnimales() {
+      try {
+        
+          const animales = await GetAnimales();
+         
+          
+          setAnimales(animales)
+      } catch (error) {
+          console.error('Error al obtener los animales:', error);
+      }
+    }
+    
+    mostrarAnimales();
+  },[])
   const [open, setOpen] = React.useState();
   const [id, setId] = React.useState(null);
   return (
@@ -10,7 +28,7 @@ export default function CustomizedDataGrid() {
       <ExpedienteModal id={id} setId={setId} open={open} setOpen={setOpen} />
       <DataGrid
         checkboxSelection
-        rows={rows}
+        rows={animales}
         columns={columns}
         onRowClick={(event) => {
           setId(event.id);
