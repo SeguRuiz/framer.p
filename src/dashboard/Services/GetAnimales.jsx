@@ -61,6 +61,9 @@ export const getAnimalesDeUsuario = async (user_id = null) => {
       },
     });
     const dataAnimales = await animalesDeLaFinca.json();
+    console.log(dataAnimales);
+    console.log(fincasData);
+    
     const animalesFiltrados = [];
     dataAnimales.forEach((e) => {
       const findId = fincasData[0].ANIMALES.find((x) => x == e.id) ?? false;

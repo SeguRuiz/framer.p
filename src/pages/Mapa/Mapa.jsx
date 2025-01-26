@@ -9,10 +9,13 @@ import GetUsuarios, {
 } from "../../services/Usuarios/GetUsuarios.jsx";
 import GetFincas from "../../dashboard/Services/GetFincas.jsx";
 import GetAnimales from "../../dashboard/Services/GetAnimales.jsx";
+import { useDispatch } from "react-redux";
 
 const Mapa = () => {
+  const accion = useDispatch()
   const mapContainerRef = useRef();
   const mapRef = useRef();
+  const userId = atob(getCookie('data'))
   const [fincas, setFincas] = useState([]);
   const [user, setUser] = useState();
   const [area, setArea] = useState({});
@@ -129,7 +132,7 @@ const Mapa = () => {
             });
             
             listaDeAnimales.push(fincaData.ANIMALES);
-            seenFincas.add(fincaId); // Marcamos esta finca como solicitada
+            seenFincas.add(fincaId); 
             safetyCounter++;
           } else {
             console.log(`Finca ya solicitada: ${fincaId}`);

@@ -1,3 +1,6 @@
+import { getCookie } from "../../utils/cookies";
+import { GetUsuario } from "../Usuarios/GetUsuarios";
+
 async function GetAnimales() {
   try {
     const response = await fetch("http://localhost:4000/animales", {
@@ -42,6 +45,12 @@ export const GetAnimalesEstado = async (estado = "") => {
     console.log(error);
     return [500, null];
   }
+};
+
+export const GetUbicacionesDeAnimales = async (fincaId) => {
+  const userId = atob(getCookie("data"));
+
+  
 };
 
 export default GetAnimales;

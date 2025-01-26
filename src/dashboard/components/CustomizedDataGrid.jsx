@@ -13,7 +13,8 @@ export default function CustomizedDataGrid() {
     async function mostrarAnimales() {
       try {
         const animales = await getAnimalesDeUsuario(idusuario);
-
+        
+        
         // Función para quitar guiones bajos y convertir la primera letra de cada palabra en mayúscula
         const quitarGuionesBajos = (str) => {
           return str.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase());

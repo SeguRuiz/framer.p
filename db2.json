@@ -1,0 +1,2591 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "NOMBRE": "Usuario 1",
+      "CORREO": "Usuario1@gmail.com",
+      "CONTRASEÑA": "123456",
+      "FINCAS": [1]
+    },
+    {
+      "id": 2,
+      "NOMBRE": "Usuario 2",
+      "CORREO": "Usuario2@gmail.com",
+      "CONTRASEÑA": "123456",
+      "FINCAS": [2]
+    },
+    {
+      "id": 3,
+      "NOMBRE": "Usuario 3",
+      "CORREO": "Usuario3@gmail.com",
+      "CONTRASEÑA": "123456",
+      "FINCAS": [3]
+    }
+  ],
+  "fincas": [
+    {
+      "id": 1,
+      "NOMBRE": "Finca numero 1",
+      "UBICACION": [
+        [-84.86571109487723, 10.182238378065382],
+        [-84.86231797808368, 10.18232850351062],
+        [-84.85911379823212, 10.180602255063263],
+        [-84.86267774564597, 10.179362891443638],
+        [-84.86421800052199, 10.179639535526086],
+        [-84.86571109487723, 10.182238378065382]
+      ],
+      "ANIMALES": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "AREA": {
+        "TIPO": "Polygon",
+        "COORDENADAS": [
+          [
+            [-67.34, 8.789],
+            [-84.123, 9.876],
+            [-84.124, 9.877],
+            [-84.125, 9.876],
+            [-84.123, 9.876],
+            [-67.34, 8.789]
+          ]
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "NOMBRE": "Finca numero 2",
+      "UBICACION": [
+        [-84.87027452265542, 10.182238378065382],
+        [-84.86688140715115, 10.18232850351062],
+        [-84.86367720260716, 10.180602255063263],
+        [-84.86724113229576, 10.179362891443638],
+        [-84.86878139112811, 10.179639535526086],
+        [-84.87027452265542, 10.182238378065382]
+      ],
+
+      "ANIMALES": [50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+      "AREA": {
+        "TIPO": "Polygon",
+        "COORDENADAS": [
+          [-67.34, 8.789],
+          [-84.123, 9.876],
+          [-84.124, 9.877],
+          [-84.125, 9.876],
+          [-84.123, 9.876],
+          [-67.34, 8.789]
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "NOMBRE": "Finca numero 3",
+      "UBICACION": "Ubicacion 3",
+      "ANIMALES": [
+        100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113,
+        114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127,
+        128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141,
+        142, 143, 144, 145, 146, 147, 148, 149
+      ],
+      "AREA": {
+        "TIPO": "Polygon",
+        "COORDENADAS": [
+          [
+            [-67.34, 8.789],
+            [-84.123, 9.876],
+            [-84.124, 9.877],
+            [-84.125, 9.876],
+            [-84.123, 9.876],
+            [-67.34, 8.789]
+          ]
+        ]
+      }
+    }
+  ],
+  "animales": [
+    {
+      "id": 1,
+      "NOMBRE": "Animal 1",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 71,
+      "ESPECIE": "BOVINO",
+      "EDAD": 32,
+      "RM": 38,
+      "TEMPERATURA": "39.8",
+      "UBICACION": [-84.86311094204397, 10.18033178191928],
+      "ULTIMA_REVISION": "2019-12-15T09:21:29.464Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 2,
+      "NOMBRE": "Animal 2",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 82,
+      "ESPECIE": "PORCINO",
+      "EDAD": 79,
+      "RM": 87,
+      "TEMPERATURA": "35.0",
+      "UBICACION": [-84.86149018792575, 10.17978310052425],
+      "ULTIMA_REVISION": "2023-06-15T09:38:59.969Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 3,
+      "NOMBRE": "Animal 3",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 93,
+      "ESPECIE": "PORCINO",
+      "EDAD": 91,
+      "RM": 13,
+      "TEMPERATURA": "36.0",
+      "UBICACION": [-84.86485682550932, 10.180199240395082],
+      "ULTIMA_REVISION": "2019-12-13T10:00:23.285Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 4,
+      "NOMBRE": "Animal 4",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 102,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 7,
+      "RM": 39,
+      "TEMPERATURA": "30.3",
+      "UBICACION": [-84.86445593478041, 10.182041849536343],
+      "ULTIMA_REVISION": "2024-03-18T06:48:46.359Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 5,
+      "NOMBRE": "Animal 5",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 103,
+      "ESPECIE": "OVINO",
+      "EDAD": 75,
+      "RM": 32,
+      "TEMPERATURA": "34.0",
+      "UBICACION": [-84.8627316544154, 10.17951917798448],
+      "ULTIMA_REVISION": "2021-06-27T02:28:46.711Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 6,
+      "NOMBRE": "Animal 6",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 131,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 62,
+      "RM": 61,
+      "TEMPERATURA": "30.6",
+      "UBICACION": [-84.86453101604985, 10.18145111919213],
+      "ULTIMA_REVISION": "2021-03-31T02:36:35.169Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 7,
+      "NOMBRE": "Animal 7",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 109,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 65,
+      "RM": 10,
+      "TEMPERATURA": "37.2",
+      "UBICACION": [-84.8643648331465, 10.179717255083858],
+      "ULTIMA_REVISION": "2020-08-26T01:02:51.412Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 8,
+      "NOMBRE": "Animal 8",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 76,
+      "ESPECIE": "BOVINO",
+      "EDAD": 73,
+      "RM": 64,
+      "TEMPERATURA": "36.2",
+      "UBICACION": [-84.85956707042956, 10.18111138658024],
+      "ULTIMA_REVISION": "2019-02-07T18:42:41.436Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 9,
+      "NOMBRE": "Animal 9",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 102,
+      "ESPECIE": "BOVINO",
+      "EDAD": 97,
+      "RM": 65,
+      "TEMPERATURA": "33.8",
+      "UBICACION": [-84.86529407702105, 10.18029967109025],
+      "ULTIMA_REVISION": "2023-08-14T13:54:14.629Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 10,
+      "NOMBRE": "Animal 10",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 128,
+      "ESPECIE": "BOVINO",
+      "EDAD": 86,
+      "RM": 10,
+      "TEMPERATURA": "32.6",
+      "UBICACION": [-84.86332583418802, 10.181339960584115],
+      "ULTIMA_REVISION": "2019-07-29T22:28:17.998Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 11,
+      "NOMBRE": "Animal 11",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 122,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 99,
+      "RM": 98,
+      "TEMPERATURA": "35.0",
+      "UBICACION": {
+        "LAT": "7.1",
+        "LNG": "0.3"
+      },
+      "ULTIMA_REVISION": "2022-12-19T18:22:00.515Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 12,
+      "NOMBRE": "Animal 12",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 85,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 96,
+      "RM": 29,
+      "TEMPERATURA": "36.4",
+      "UBICACION": {
+        "LAT": "8.2",
+        "LNG": "6.7"
+      },
+      "ULTIMA_REVISION": "2021-06-06T12:48:32.647Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 13,
+      "NOMBRE": "Animal 13",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 50,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 86,
+      "RM": 66,
+      "TEMPERATURA": "33.2",
+      "UBICACION": {
+        "LAT": "7.6",
+        "LNG": "7.3"
+      },
+      "ULTIMA_REVISION": "2020-01-02T06:23:43.299Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 14,
+      "NOMBRE": "Animal 14",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 51,
+      "ESPECIE": "OVINO",
+      "EDAD": 54,
+      "RM": 79,
+      "TEMPERATURA": "31.8",
+      "UBICACION": {
+        "LAT": "6.0",
+        "LNG": "5.9"
+      },
+      "ULTIMA_REVISION": "2021-10-05T02:33:49.315Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 15,
+      "NOMBRE": "Animal 15",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 126,
+      "ESPECIE": "PORCINO",
+      "EDAD": 96,
+      "RM": 53,
+      "TEMPERATURA": "31.7",
+      "UBICACION": {
+        "LAT": "1.9",
+        "LNG": "6.7"
+      },
+      "ULTIMA_REVISION": "2022-07-04T10:53:46.091Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 16,
+      "NOMBRE": "Animal 16",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 133,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 30,
+      "RM": 15,
+      "TEMPERATURA": "34.0",
+      "UBICACION": {
+        "LAT": "1.3",
+        "LNG": "7.2"
+      },
+      "ULTIMA_REVISION": "2022-04-27T16:41:14.954Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 17,
+      "NOMBRE": "Animal 17",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 124,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 89,
+      "RM": 95,
+      "TEMPERATURA": "35.7",
+      "UBICACION": {
+        "LAT": "9.4",
+        "LNG": "0.2"
+      },
+      "ULTIMA_REVISION": "2021-05-23T15:34:59.981Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 18,
+      "NOMBRE": "Animal 18",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 78,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 85,
+      "RM": 58,
+      "TEMPERATURA": "35.5",
+      "UBICACION": {
+        "LAT": "5.2",
+        "LNG": "1.4"
+      },
+      "ULTIMA_REVISION": "2021-12-04T13:40:42.946Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 19,
+      "NOMBRE": "Animal 19",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 141,
+      "ESPECIE": "PORCINO",
+      "EDAD": 32,
+      "RM": 60,
+      "TEMPERATURA": "34.3",
+      "UBICACION": {
+        "LAT": "2.9",
+        "LNG": "2.8"
+      },
+      "ULTIMA_REVISION": "2023-07-10T05:05:25.753Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 20,
+      "NOMBRE": "Animal 20",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 105,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 43,
+      "RM": 97,
+      "TEMPERATURA": "36.5",
+      "UBICACION": {
+        "LAT": "8.1",
+        "LNG": "5.3"
+      },
+      "ULTIMA_REVISION": "2020-11-02T16:29:49.421Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 21,
+      "NOMBRE": "Animal 21",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 136,
+      "ESPECIE": "OVINO",
+      "EDAD": 64,
+      "RM": 61,
+      "TEMPERATURA": "30.1",
+      "UBICACION": {
+        "LAT": "0.7",
+        "LNG": "0.7"
+      },
+      "ULTIMA_REVISION": "2020-02-26T09:33:42.137Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 22,
+      "NOMBRE": "Animal 22",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 117,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 67,
+      "RM": 62,
+      "TEMPERATURA": "33.6",
+      "UBICACION": {
+        "LAT": "9.0",
+        "LNG": "9.7"
+      },
+      "ULTIMA_REVISION": "2024-02-04T15:34:57.611Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 23,
+      "NOMBRE": "Animal 23",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 56,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 18,
+      "RM": 85,
+      "TEMPERATURA": "37.7",
+      "UBICACION": {
+        "LAT": "8.9",
+        "LNG": "6.7"
+      },
+      "ULTIMA_REVISION": "2021-12-10T01:43:45.207Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 24,
+      "NOMBRE": "Animal 24",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 140,
+      "ESPECIE": "BOVINO",
+      "EDAD": 5,
+      "RM": 95,
+      "TEMPERATURA": "35.3",
+      "UBICACION": {
+        "LAT": "0.0",
+        "LNG": "2.0"
+      },
+      "ULTIMA_REVISION": "2022-06-21T19:32:50.521Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 25,
+      "NOMBRE": "Animal 25",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 79,
+      "ESPECIE": "PORCINO",
+      "EDAD": 16,
+      "RM": 37,
+      "TEMPERATURA": "39.7",
+      "UBICACION": {
+        "LAT": "4.0",
+        "LNG": "2.8"
+      },
+      "ULTIMA_REVISION": "2020-02-25T12:14:23.377Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 26,
+      "NOMBRE": "Animal 26",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 141,
+      "ESPECIE": "PORCINO",
+      "EDAD": 61,
+      "RM": 24,
+      "TEMPERATURA": "38.3",
+      "UBICACION": {
+        "LAT": "0.6",
+        "LNG": "9.9"
+      },
+      "ULTIMA_REVISION": "2022-02-08T23:46:35.158Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 27,
+      "NOMBRE": "Animal 27",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 57,
+      "ESPECIE": "PORCINO",
+      "EDAD": 12,
+      "RM": 3,
+      "TEMPERATURA": "35.2",
+      "UBICACION": {
+        "LAT": "7.7",
+        "LNG": "4.9"
+      },
+      "ULTIMA_REVISION": "2024-10-30T00:05:48.772Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 28,
+      "NOMBRE": "Animal 28",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 120,
+      "ESPECIE": "PORCINO",
+      "EDAD": 39,
+      "RM": 77,
+      "TEMPERATURA": "34.9",
+      "UBICACION": {
+        "LAT": "1.8",
+        "LNG": "2.3"
+      },
+      "ULTIMA_REVISION": "2023-08-30T09:57:22.450Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 29,
+      "NOMBRE": "Animal 29",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 82,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 23,
+      "RM": 88,
+      "TEMPERATURA": "30.3",
+      "UBICACION": {
+        "LAT": "3.1",
+        "LNG": "2.0"
+      },
+      "ULTIMA_REVISION": "2022-02-25T20:58:06.801Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 30,
+      "NOMBRE": "Animal 30",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 97,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 70,
+      "RM": 18,
+      "TEMPERATURA": "31.6",
+      "UBICACION": {
+        "LAT": "8.1",
+        "LNG": "0.5"
+      },
+      "ULTIMA_REVISION": "2022-09-04T10:09:09.107Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 31,
+      "NOMBRE": "Animal 31",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 113,
+      "ESPECIE": "BOVINO",
+      "EDAD": 98,
+      "RM": 37,
+      "TEMPERATURA": "37.0",
+      "UBICACION": {
+        "LAT": "1.1",
+        "LNG": "1.0"
+      },
+      "ULTIMA_REVISION": "2021-07-16T16:17:29.605Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 32,
+      "NOMBRE": "Animal 32",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 86,
+      "ESPECIE": "PORCINO",
+      "EDAD": 59,
+      "RM": 47,
+      "TEMPERATURA": "39.9",
+      "UBICACION": {
+        "LAT": "1.9",
+        "LNG": "1.1"
+      },
+      "ULTIMA_REVISION": "2021-06-17T06:53:42.542Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 33,
+      "NOMBRE": "Animal 33",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 147,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 37,
+      "RM": 34,
+      "TEMPERATURA": "34.6",
+      "UBICACION": {
+        "LAT": "7.9",
+        "LNG": "6.1"
+      },
+      "ULTIMA_REVISION": "2024-04-15T22:08:30.879Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 34,
+      "NOMBRE": "Animal 34",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 115,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 91,
+      "RM": 40,
+      "TEMPERATURA": "35.8",
+      "UBICACION": {
+        "LAT": "6.7",
+        "LNG": "6.7"
+      },
+      "ULTIMA_REVISION": "2024-08-08T14:50:11.726Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 35,
+      "NOMBRE": "Animal 35",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 95,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 70,
+      "RM": 33,
+      "TEMPERATURA": "37.0",
+      "UBICACION": {
+        "LAT": "6.2",
+        "LNG": "8.1"
+      },
+      "ULTIMA_REVISION": "2024-04-27T14:28:06.283Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 36,
+      "NOMBRE": "Animal 36",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 123,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 63,
+      "RM": 43,
+      "TEMPERATURA": "33.8",
+      "UBICACION": {
+        "LAT": "5.1",
+        "LNG": "4.8"
+      },
+      "ULTIMA_REVISION": "2020-10-01T08:07:19.554Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 37,
+      "NOMBRE": "Animal 37",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 73,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 90,
+      "RM": 92,
+      "TEMPERATURA": "36.7",
+      "UBICACION": {
+        "LAT": "6.4",
+        "LNG": "2.5"
+      },
+      "ULTIMA_REVISION": "2021-04-01T20:27:47.865Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 38,
+      "NOMBRE": "Animal 38",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 99,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 76,
+      "RM": 94,
+      "TEMPERATURA": "34.4",
+      "UBICACION": {
+        "LAT": "1.1",
+        "LNG": "7.4"
+      },
+      "ULTIMA_REVISION": "2021-06-12T08:57:13.675Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 39,
+      "NOMBRE": "Animal 39",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 62,
+      "ESPECIE": "OVINO",
+      "EDAD": 18,
+      "RM": 28,
+      "TEMPERATURA": "39.6",
+      "UBICACION": {
+        "LAT": "7.6",
+        "LNG": "0.0"
+      },
+      "ULTIMA_REVISION": "2021-11-02T18:12:36.920Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 40,
+      "NOMBRE": "Animal 40",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 148,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 24,
+      "RM": 65,
+      "TEMPERATURA": "39.0",
+      "UBICACION": {
+        "LAT": "1.2",
+        "LNG": "6.4"
+      },
+      "ULTIMA_REVISION": "2023-03-18T17:52:14.628Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 41,
+      "NOMBRE": "Animal 41",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 130,
+      "ESPECIE": "PORCINO",
+      "EDAD": 68,
+      "RM": 80,
+      "TEMPERATURA": "39.0",
+      "UBICACION": {
+        "LAT": "1.5",
+        "LNG": "2.3"
+      },
+      "ULTIMA_REVISION": "2022-01-19T16:48:34.341Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 42,
+      "NOMBRE": "Animal 42",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 112,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 23,
+      "RM": 50,
+      "TEMPERATURA": "34.7",
+      "UBICACION": {
+        "LAT": "8.9",
+        "LNG": "7.0"
+      },
+      "ULTIMA_REVISION": "2021-03-24T15:09:12.343Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 43,
+      "NOMBRE": "Animal 43",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 146,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 88,
+      "RM": 17,
+      "TEMPERATURA": "33.4",
+      "UBICACION": {
+        "LAT": "4.8",
+        "LNG": "0.1"
+      },
+      "ULTIMA_REVISION": "2022-11-19T09:46:39.470Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 44,
+      "NOMBRE": "Animal 44",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 55,
+      "ESPECIE": "PORCINO",
+      "EDAD": 44,
+      "RM": 2,
+      "TEMPERATURA": "32.0",
+      "UBICACION": {
+        "LAT": "6.9",
+        "LNG": "6.8"
+      },
+      "ULTIMA_REVISION": "2019-07-01T19:32:32.175Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 45,
+      "NOMBRE": "Animal 45",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 52,
+      "ESPECIE": "PORCINO",
+      "EDAD": 13,
+      "RM": 12,
+      "TEMPERATURA": "33.3",
+      "UBICACION": {
+        "LAT": "8.8",
+        "LNG": "5.2"
+      },
+      "ULTIMA_REVISION": "2024-04-26T08:46:30.400Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 46,
+      "NOMBRE": "Animal 46",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 100,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 79,
+      "RM": 98,
+      "TEMPERATURA": "30.1",
+      "UBICACION": {
+        "LAT": "3.0",
+        "LNG": "5.5"
+      },
+      "ULTIMA_REVISION": "2020-12-04T03:17:09.764Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 47,
+      "NOMBRE": "Animal 47",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 123,
+      "ESPECIE": "OVINO",
+      "EDAD": 53,
+      "RM": 62,
+      "TEMPERATURA": "37.6",
+      "UBICACION": {
+        "LAT": "6.9",
+        "LNG": "7.6"
+      },
+      "ULTIMA_REVISION": "2024-03-18T20:52:05.024Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 48,
+      "NOMBRE": "Animal 48",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 86,
+      "ESPECIE": "OVINO",
+      "EDAD": 80,
+      "RM": 71,
+      "TEMPERATURA": "34.7",
+      "UBICACION": {
+        "LAT": "2.0",
+        "LNG": "3.2"
+      },
+      "ULTIMA_REVISION": "2019-03-21T16:56:34.766Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 49,
+      "NOMBRE": "Animal 49",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 66,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 97,
+      "RM": 11,
+      "TEMPERATURA": "32.7",
+      "UBICACION": {
+        "LAT": "9.4",
+        "LNG": "7.7"
+      },
+      "ULTIMA_REVISION": "2023-06-16T06:42:31.036Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 50,
+      "NOMBRE": "Animal 50",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 92,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 46,
+      "RM": 50,
+      "TEMPERATURA": "30.9",
+      "UBICACION": [-84.86519764797121, 10.18204253110256],
+      "ULTIMA_REVISION": "2022-10-13T21:47:27.330Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 51,
+      "NOMBRE": "Animal 51",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 56,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 82,
+      "RM": 81,
+      "TEMPERATURA": "38.2",
+      "UBICACION": [-84.86976679385194, 10.181745568835549],
+      "ULTIMA_REVISION": "2023-07-14T14:47:33.549Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 52,
+      "NOMBRE": "Animal 52",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 55,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 37,
+      "RM": 94,
+      "TEMPERATURA": "38.9",
+      "UBICACION": [-84.86751436221589, 10.18083173276207],
+      "ULTIMA_REVISION": "2023-12-18T08:21:21.520Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 53,
+      "NOMBRE": "Animal 53",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 113,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 1,
+      "RM": 83,
+      "TEMPERATURA": "34.3",
+      "UBICACION": [-84.86986238163435, 10.1801689763176],
+      "ULTIMA_REVISION": "2022-02-27T14:09:36.792Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 54,
+      "NOMBRE": "Animal 54",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 95,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 23,
+      "RM": 74,
+      "TEMPERATURA": "37.4",
+      "UBICACION": [-84.86807743119356, 10.179448368346074],
+      "ULTIMA_REVISION": "2019-03-21T11:53:19.828Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 55,
+      "NOMBRE": "Animal 55",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 146,
+      "ESPECIE": "PORCINO",
+      "EDAD": 84,
+      "RM": 16,
+      "TEMPERATURA": "36.2",
+      "UBICACION": [-84.86909506536979, 10.180005465477754],
+      "ULTIMA_REVISION": "2020-07-07T17:10:03.072Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 56,
+      "NOMBRE": "Animal 56",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 84,
+      "ESPECIE": "OVINO",
+      "EDAD": 89,
+      "RM": 33,
+      "TEMPERATURA": "31.6",
+      "UBICACION": [-84.8683197575891, 10.18149691485332],
+      "ULTIMA_REVISION": "2020-11-20T17:14:18.576Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 57,
+      "NOMBRE": "Animal 57",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 64,
+      "ESPECIE": "PORCINO",
+      "EDAD": 99,
+      "RM": 7,
+      "TEMPERATURA": "34.8",
+      "UBICACION": [-84.86637699422776, 10.179683057479382],
+      "ULTIMA_REVISION": "2020-08-30T14:17:18.584Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 58,
+      "NOMBRE": "Animal 58",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 139,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 72,
+      "RM": 54,
+      "TEMPERATURA": "31.8",
+      "UBICACION": [-84.86938215034584, 10.179506444390022],
+      "ULTIMA_REVISION": "2024-11-17T11:33:30.019Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 59,
+      "NOMBRE": "Animal 59",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 110,
+      "ESPECIE": "PORCINO",
+      "EDAD": 99,
+      "RM": 74,
+      "TEMPERATURA": "37.3",
+      "UBICACION": [-84.86569800404725, 10.180919246035545],
+      "ULTIMA_REVISION": "2020-09-28T20:05:51.373Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 60,
+      "NOMBRE": "Animal 60",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 97,
+      "ESPECIE": "PORCINO",
+      "EDAD": 18,
+      "RM": 8,
+      "TEMPERATURA": "34.4",
+      "UBICACION": [-84.8687231613995, 10.180374699870159],
+      "ULTIMA_REVISION": "2019-10-27T23:41:25.542Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 61,
+      "NOMBRE": "Animal 61",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 72,
+      "ESPECIE": "OVINO",
+      "EDAD": 97,
+      "RM": 34,
+      "TEMPERATURA": "33.8",
+      "UBICACION": {
+        "LAT": "5.2",
+        "LNG": "8.9"
+      },
+      "ULTIMA_REVISION": "2023-12-08T21:10:52.235Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 62,
+      "NOMBRE": "Animal 62",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 126,
+      "ESPECIE": "OVINO",
+      "EDAD": 45,
+      "RM": 47,
+      "TEMPERATURA": "38.7",
+      "UBICACION": {
+        "LAT": "5.2",
+        "LNG": "8.9"
+      },
+      "ULTIMA_REVISION": "2023-01-12T17:46:46.253Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 63,
+      "NOMBRE": "Animal 63",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 99,
+      "ESPECIE": "BOVINO",
+      "EDAD": 13,
+      "RM": 0,
+      "TEMPERATURA": "39.0",
+      "UBICACION": {
+        "LAT": "4.3",
+        "LNG": "2.8"
+      },
+      "ULTIMA_REVISION": "2019-07-10T15:05:54.990Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 64,
+      "NOMBRE": "Animal 64",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 61,
+      "ESPECIE": "PORCINO",
+      "EDAD": 33,
+      "RM": 60,
+      "TEMPERATURA": "34.0",
+      "UBICACION": {
+        "LAT": "3.1",
+        "LNG": "1.8"
+      },
+      "ULTIMA_REVISION": "2022-03-10T13:18:58.530Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 65,
+      "NOMBRE": "Animal 65",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 111,
+      "ESPECIE": "BOVINO",
+      "EDAD": 42,
+      "RM": 42,
+      "TEMPERATURA": "35.7",
+      "UBICACION": {
+        "LAT": "7.3",
+        "LNG": "2.5"
+      },
+      "ULTIMA_REVISION": "2019-07-28T00:23:46.073Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 66,
+      "NOMBRE": "Animal 66",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 140,
+      "ESPECIE": "OVINO",
+      "EDAD": 55,
+      "RM": 4,
+      "TEMPERATURA": "38.9",
+      "UBICACION": {
+        "LAT": "1.7",
+        "LNG": "7.5"
+      },
+      "ULTIMA_REVISION": "2024-08-02T08:25:33.474Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 67,
+      "NOMBRE": "Animal 67",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 117,
+      "ESPECIE": "PORCINO",
+      "EDAD": 38,
+      "RM": 66,
+      "TEMPERATURA": "36.1",
+      "UBICACION": {
+        "LAT": "1.6",
+        "LNG": "5.2"
+      },
+      "ULTIMA_REVISION": "2024-01-24T15:08:05.755Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 68,
+      "NOMBRE": "Animal 68",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 107,
+      "ESPECIE": "PORCINO",
+      "EDAD": 95,
+      "RM": 45,
+      "TEMPERATURA": "35.9",
+      "UBICACION": {
+        "LAT": "9.9",
+        "LNG": "7.8"
+      },
+      "ULTIMA_REVISION": "2024-06-23T11:47:48.375Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 69,
+      "NOMBRE": "Animal 69",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 111,
+      "ESPECIE": "OVINO",
+      "EDAD": 15,
+      "RM": 36,
+      "TEMPERATURA": "34.3",
+      "UBICACION": {
+        "LAT": "5.4",
+        "LNG": "4.2"
+      },
+      "ULTIMA_REVISION": "2023-10-21T00:01:30.951Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 70,
+      "NOMBRE": "Animal 70",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 149,
+      "ESPECIE": "OVINO",
+      "EDAD": 4,
+      "RM": 4,
+      "TEMPERATURA": "34.1",
+      "UBICACION": {
+        "LAT": "2.2",
+        "LNG": "3.7"
+      },
+      "ULTIMA_REVISION": "2023-01-18T20:20:13.638Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 71,
+      "NOMBRE": "Animal 71",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 56,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 71,
+      "RM": 78,
+      "TEMPERATURA": "36.9",
+      "UBICACION": {
+        "LAT": "5.2",
+        "LNG": "7.6"
+      },
+      "ULTIMA_REVISION": "2024-10-13T14:38:57.629Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 72,
+      "NOMBRE": "Animal 72",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 58,
+      "ESPECIE": "OVINO",
+      "EDAD": 58,
+      "RM": 8,
+      "TEMPERATURA": "33.5",
+      "UBICACION": {
+        "LAT": "9.2",
+        "LNG": "8.9"
+      },
+      "ULTIMA_REVISION": "2023-11-01T09:14:43.631Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 73,
+      "NOMBRE": "Animal 73",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 95,
+      "ESPECIE": "BOVINO",
+      "EDAD": 70,
+      "RM": 90,
+      "TEMPERATURA": "30.5",
+      "UBICACION": {
+        "LAT": "0.6",
+        "LNG": "8.5"
+      },
+      "ULTIMA_REVISION": "2024-12-21T16:18:13.466Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 74,
+      "NOMBRE": "Animal 74",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 66,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 12,
+      "RM": 48,
+      "TEMPERATURA": "34.0",
+      "UBICACION": {
+        "LAT": "6.3",
+        "LNG": "8.7"
+      },
+      "ULTIMA_REVISION": "2019-02-11T21:01:22.813Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 75,
+      "NOMBRE": "Animal 75",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 61,
+      "ESPECIE": "BOVINO",
+      "EDAD": 4,
+      "RM": 81,
+      "TEMPERATURA": "30.7",
+      "UBICACION": {
+        "LAT": "5.1",
+        "LNG": "7.0"
+      },
+      "ULTIMA_REVISION": "2020-03-08T09:49:43.058Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 76,
+      "NOMBRE": "Animal 76",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 112,
+      "ESPECIE": "OVINO",
+      "EDAD": 63,
+      "RM": 52,
+      "TEMPERATURA": "35.5",
+      "UBICACION": {
+        "LAT": "9.3",
+        "LNG": "8.9"
+      },
+      "ULTIMA_REVISION": "2022-07-13T19:08:41.790Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 77,
+      "NOMBRE": "Animal 77",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 66,
+      "ESPECIE": "BOVINO",
+      "EDAD": 26,
+      "RM": 54,
+      "TEMPERATURA": "35.0",
+      "UBICACION": {
+        "LAT": "1.4",
+        "LNG": "6.8"
+      },
+      "ULTIMA_REVISION": "2019-08-17T18:59:11.591Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 78,
+      "NOMBRE": "Animal 78",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 53,
+      "ESPECIE": "OVINO",
+      "EDAD": 24,
+      "RM": 10,
+      "TEMPERATURA": "32.7",
+      "UBICACION": {
+        "LAT": "7.9",
+        "LNG": "0.6"
+      },
+      "ULTIMA_REVISION": "2021-04-10T21:51:07.195Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 79,
+      "NOMBRE": "Animal 79",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 70,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 82,
+      "RM": 6,
+      "TEMPERATURA": "36.8",
+      "UBICACION": {
+        "LAT": "5.8",
+        "LNG": "6.0"
+      },
+      "ULTIMA_REVISION": "2021-06-17T02:47:11.145Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 80,
+      "NOMBRE": "Animal 80",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 102,
+      "ESPECIE": "PORCINO",
+      "EDAD": 48,
+      "RM": 91,
+      "TEMPERATURA": "33.7",
+      "UBICACION": {
+        "LAT": "10.0",
+        "LNG": "8.8"
+      },
+      "ULTIMA_REVISION": "2023-08-31T19:37:06.782Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 81,
+      "NOMBRE": "Animal 81",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 50,
+      "ESPECIE": "PORCINO",
+      "EDAD": 36,
+      "RM": 19,
+      "TEMPERATURA": "37.2",
+      "UBICACION": {
+        "LAT": "0.7",
+        "LNG": "9.0"
+      },
+      "ULTIMA_REVISION": "2024-11-24T08:01:50.337Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 82,
+      "NOMBRE": "Animal 82",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 146,
+      "ESPECIE": "BOVINO",
+      "EDAD": 8,
+      "RM": 45,
+      "TEMPERATURA": "38.1",
+      "UBICACION": {
+        "LAT": "3.4",
+        "LNG": "1.7"
+      },
+      "ULTIMA_REVISION": "2020-02-08T18:14:10.950Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 83,
+      "NOMBRE": "Animal 83",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 78,
+      "ESPECIE": "BOVINO",
+      "EDAD": 83,
+      "RM": 32,
+      "TEMPERATURA": "30.7",
+      "UBICACION": {
+        "LAT": "9.8",
+        "LNG": "7.5"
+      },
+      "ULTIMA_REVISION": "2023-11-11T07:53:06.057Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 84,
+      "NOMBRE": "Animal 84",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 121,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 25,
+      "RM": 90,
+      "TEMPERATURA": "39.8",
+      "UBICACION": {
+        "LAT": "1.1",
+        "LNG": "8.4"
+      },
+      "ULTIMA_REVISION": "2023-04-04T05:59:13.946Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 85,
+      "NOMBRE": "Animal 85",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 136,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 66,
+      "RM": 88,
+      "TEMPERATURA": "33.7",
+      "UBICACION": {
+        "LAT": "3.1",
+        "LNG": "3.0"
+      },
+      "ULTIMA_REVISION": "2020-02-20T22:48:47.433Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 86,
+      "NOMBRE": "Animal 86",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 141,
+      "ESPECIE": "PORCINO",
+      "EDAD": 19,
+      "RM": 5,
+      "TEMPERATURA": "30.8",
+      "UBICACION": {
+        "LAT": "9.8",
+        "LNG": "3.7"
+      },
+      "ULTIMA_REVISION": "2019-02-09T12:26:56.267Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 87,
+      "NOMBRE": "Animal 87",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 58,
+      "ESPECIE": "BOVINO",
+      "EDAD": 60,
+      "RM": 44,
+      "TEMPERATURA": "36.5",
+      "UBICACION": {
+        "LAT": "2.6",
+        "LNG": "8.2"
+      },
+      "ULTIMA_REVISION": "2021-02-20T11:54:10.772Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 88,
+      "NOMBRE": "Animal 88",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 95,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 54,
+      "RM": 80,
+      "TEMPERATURA": "36.3",
+      "UBICACION": {
+        "LAT": "4.2",
+        "LNG": "0.7"
+      },
+      "ULTIMA_REVISION": "2022-03-23T00:41:11.890Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 89,
+      "NOMBRE": "Animal 89",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 57,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 23,
+      "RM": 14,
+      "TEMPERATURA": "35.6",
+      "UBICACION": {
+        "LAT": "7.9",
+        "LNG": "0.4"
+      },
+      "ULTIMA_REVISION": "2019-12-18T21:03:27.807Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 90,
+      "NOMBRE": "Animal 90",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 103,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 49,
+      "RM": 18,
+      "TEMPERATURA": "38.0",
+      "UBICACION": {
+        "LAT": "5.8",
+        "LNG": "2.0"
+      },
+      "ULTIMA_REVISION": "2020-01-02T20:04:33.469Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 91,
+      "NOMBRE": "Animal 91",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 104,
+      "ESPECIE": "PORCINO",
+      "EDAD": 58,
+      "RM": 51,
+      "TEMPERATURA": "31.4",
+      "UBICACION": {
+        "LAT": "5.7",
+        "LNG": "8.4"
+      },
+      "ULTIMA_REVISION": "2020-12-20T02:46:58.462Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 92,
+      "NOMBRE": "Animal 92",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 136,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 48,
+      "RM": 47,
+      "TEMPERATURA": "34.7",
+      "UBICACION": {
+        "LAT": "0.4",
+        "LNG": "8.3"
+      },
+      "ULTIMA_REVISION": "2020-06-24T09:35:05.972Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 93,
+      "NOMBRE": "Animal 93",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 143,
+      "ESPECIE": "PORCINO",
+      "EDAD": 44,
+      "RM": 90,
+      "TEMPERATURA": "34.6",
+      "UBICACION": {
+        "LAT": "1.2",
+        "LNG": "1.8"
+      },
+      "ULTIMA_REVISION": "2024-01-08T20:59:47.382Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 94,
+      "NOMBRE": "Animal 94",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 63,
+      "ESPECIE": "BOVINO",
+      "EDAD": 9,
+      "RM": 17,
+      "TEMPERATURA": "35.0",
+      "UBICACION": {
+        "LAT": "0.8",
+        "LNG": "1.6"
+      },
+      "ULTIMA_REVISION": "2019-07-10T08:01:38.460Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 95,
+      "NOMBRE": "Animal 95",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 103,
+      "ESPECIE": "OVINO",
+      "EDAD": 67,
+      "RM": 74,
+      "TEMPERATURA": "33.7",
+      "UBICACION": {
+        "LAT": "7.3",
+        "LNG": "0.9"
+      },
+      "ULTIMA_REVISION": "2019-11-09T13:44:52.398Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 96,
+      "NOMBRE": "Animal 96",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 89,
+      "ESPECIE": "OVINO",
+      "EDAD": 75,
+      "RM": 81,
+      "TEMPERATURA": "35.5",
+      "UBICACION": {
+        "LAT": "8.5",
+        "LNG": "3.2"
+      },
+      "ULTIMA_REVISION": "2020-09-30T20:26:50.394Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 97,
+      "NOMBRE": "Animal 97",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 103,
+      "ESPECIE": "PORCINO",
+      "EDAD": 48,
+      "RM": 17,
+      "TEMPERATURA": "39.2",
+      "UBICACION": {
+        "LAT": "9.9",
+        "LNG": "9.8"
+      },
+      "ULTIMA_REVISION": "2021-06-20T19:42:39.123Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 98,
+      "NOMBRE": "Animal 98",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 78,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 79,
+      "RM": 65,
+      "TEMPERATURA": "34.4",
+      "UBICACION": {
+        "LAT": "0.6",
+        "LNG": "5.9"
+      },
+      "ULTIMA_REVISION": "2021-10-13T11:00:40.318Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 99,
+      "NOMBRE": "Animal 99",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 132,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 64,
+      "RM": 5,
+      "TEMPERATURA": "32.9",
+      "UBICACION": {
+        "LAT": "3.6",
+        "LNG": "5.4"
+      },
+      "ULTIMA_REVISION": "2024-04-22T23:08:03.903Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 100,
+      "NOMBRE": "Animal 100",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 64,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 76,
+      "RM": 62,
+      "TEMPERATURA": "34.8",
+      "UBICACION": {
+        "LAT": "7.0",
+        "LNG": "0.9"
+      },
+      "ULTIMA_REVISION": "2023-01-07T15:49:20.944Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 101,
+      "NOMBRE": "Animal 101",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 63,
+      "ESPECIE": "PORCINO",
+      "EDAD": 7,
+      "RM": 63,
+      "TEMPERATURA": "30.5",
+      "UBICACION": {
+        "LAT": "6.6",
+        "LNG": "2.0"
+      },
+      "ULTIMA_REVISION": "2023-12-21T12:31:06.033Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 102,
+      "NOMBRE": "Animal 102",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 149,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 66,
+      "RM": 87,
+      "TEMPERATURA": "37.3",
+      "UBICACION": {
+        "LAT": "3.4",
+        "LNG": "7.9"
+      },
+      "ULTIMA_REVISION": "2024-11-20T15:02:19.323Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 103,
+      "NOMBRE": "Animal 103",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 73,
+      "ESPECIE": "PORCINO",
+      "EDAD": 38,
+      "RM": 66,
+      "TEMPERATURA": "33.1",
+      "UBICACION": {
+        "LAT": "4.1",
+        "LNG": "5.0"
+      },
+      "ULTIMA_REVISION": "2023-08-24T13:37:16.424Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 104,
+      "NOMBRE": "Animal 104",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 63,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 18,
+      "RM": 18,
+      "TEMPERATURA": "37.9",
+      "UBICACION": {
+        "LAT": "8.9",
+        "LNG": "9.4"
+      },
+      "ULTIMA_REVISION": "2024-05-17T02:58:07.099Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 105,
+      "NOMBRE": "Animal 105",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 113,
+      "ESPECIE": "OVINO",
+      "EDAD": 9,
+      "RM": 16,
+      "TEMPERATURA": "35.7",
+      "UBICACION": {
+        "LAT": "7.7",
+        "LNG": "8.2"
+      },
+      "ULTIMA_REVISION": "2023-12-07T07:47:59.477Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 106,
+      "NOMBRE": "Animal 106",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 78,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 25,
+      "RM": 61,
+      "TEMPERATURA": "37.4",
+      "UBICACION": {
+        "LAT": "1.0",
+        "LNG": "4.2"
+      },
+      "ULTIMA_REVISION": "2020-06-05T15:34:53.279Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 107,
+      "NOMBRE": "Animal 107",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 121,
+      "ESPECIE": "BOVINO",
+      "EDAD": 89,
+      "RM": 88,
+      "TEMPERATURA": "32.0",
+      "UBICACION": {
+        "LAT": "8.3",
+        "LNG": "1.9"
+      },
+      "ULTIMA_REVISION": "2021-06-07T02:01:42.410Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 108,
+      "NOMBRE": "Animal 108",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 136,
+      "ESPECIE": "OVINO",
+      "EDAD": 4,
+      "RM": 92,
+      "TEMPERATURA": "33.2",
+      "UBICACION": {
+        "LAT": "3.0",
+        "LNG": "4.0"
+      },
+      "ULTIMA_REVISION": "2021-05-18T09:56:40.844Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 109,
+      "NOMBRE": "Animal 109",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 129,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 75,
+      "RM": 32,
+      "TEMPERATURA": "39.3",
+      "UBICACION": {
+        "LAT": "0.3",
+        "LNG": "1.1"
+      },
+      "ULTIMA_REVISION": "2022-08-23T19:01:36.284Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 110,
+      "NOMBRE": "Animal 110",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 145,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 66,
+      "RM": 82,
+      "TEMPERATURA": "39.9",
+      "UBICACION": {
+        "LAT": "4.5",
+        "LNG": "8.4"
+      },
+      "ULTIMA_REVISION": "2024-08-23T09:37:46.403Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 111,
+      "NOMBRE": "Animal 111",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 105,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 22,
+      "RM": 48,
+      "TEMPERATURA": "36.7",
+      "UBICACION": {
+        "LAT": "2.7",
+        "LNG": "6.2"
+      },
+      "ULTIMA_REVISION": "2019-11-20T17:30:47.750Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 112,
+      "NOMBRE": "Animal 112",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 71,
+      "ESPECIE": "OVINO",
+      "EDAD": 42,
+      "RM": 69,
+      "TEMPERATURA": "33.1",
+      "UBICACION": {
+        "LAT": "5.1",
+        "LNG": "0.1"
+      },
+      "ULTIMA_REVISION": "2019-05-14T22:55:00.173Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 113,
+      "NOMBRE": "Animal 113",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 74,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 2,
+      "RM": 33,
+      "TEMPERATURA": "35.3",
+      "UBICACION": {
+        "LAT": "9.8",
+        "LNG": "4.4"
+      },
+      "ULTIMA_REVISION": "2024-01-19T00:50:04.083Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 114,
+      "NOMBRE": "Animal 114",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 147,
+      "ESPECIE": "BOVINO",
+      "EDAD": 63,
+      "RM": 37,
+      "TEMPERATURA": "32.2",
+      "UBICACION": {
+        "LAT": "9.6",
+        "LNG": "0.9"
+      },
+      "ULTIMA_REVISION": "2023-11-20T10:41:57.748Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 115,
+      "NOMBRE": "Animal 115",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 101,
+      "ESPECIE": "BOVINO",
+      "EDAD": 32,
+      "RM": 11,
+      "TEMPERATURA": "30.8",
+      "UBICACION": {
+        "LAT": "8.4",
+        "LNG": "2.4"
+      },
+      "ULTIMA_REVISION": "2020-05-17T09:01:19.949Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 116,
+      "NOMBRE": "Animal 116",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 149,
+      "ESPECIE": "BOVINO",
+      "EDAD": 87,
+      "RM": 46,
+      "TEMPERATURA": "36.0",
+      "UBICACION": {
+        "LAT": "9.6",
+        "LNG": "5.9"
+      },
+      "ULTIMA_REVISION": "2023-11-04T15:19:52.422Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 117,
+      "NOMBRE": "Animal 117",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 109,
+      "ESPECIE": "OVINO",
+      "EDAD": 71,
+      "RM": 92,
+      "TEMPERATURA": "32.8",
+      "UBICACION": {
+        "LAT": "5.9",
+        "LNG": "1.6"
+      },
+      "ULTIMA_REVISION": "2021-11-15T09:39:29.922Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 118,
+      "NOMBRE": "Animal 118",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 85,
+      "ESPECIE": "OVINO",
+      "EDAD": 89,
+      "RM": 65,
+      "TEMPERATURA": "37.2",
+      "UBICACION": {
+        "LAT": "0.9",
+        "LNG": "6.2"
+      },
+      "ULTIMA_REVISION": "2024-11-14T04:01:15.474Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 119,
+      "NOMBRE": "Animal 119",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 68,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 99,
+      "RM": 9,
+      "TEMPERATURA": "35.8",
+      "UBICACION": {
+        "LAT": "9.2",
+        "LNG": "2.3"
+      },
+      "ULTIMA_REVISION": "2021-05-08T10:41:27.810Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 120,
+      "NOMBRE": "Animal 120",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 62,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 89,
+      "RM": 64,
+      "TEMPERATURA": "39.5",
+      "UBICACION": {
+        "LAT": "2.4",
+        "LNG": "3.5"
+      },
+      "ULTIMA_REVISION": "2019-02-20T04:00:29.713Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 121,
+      "NOMBRE": "Animal 121",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 52,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 31,
+      "RM": 77,
+      "TEMPERATURA": "30.6",
+      "UBICACION": {
+        "LAT": "5.1",
+        "LNG": "9.2"
+      },
+      "ULTIMA_REVISION": "2023-03-18T13:33:25.830Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 122,
+      "NOMBRE": "Animal 122",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 55,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 23,
+      "RM": 2,
+      "TEMPERATURA": "32.6",
+      "UBICACION": {
+        "LAT": "0.5",
+        "LNG": "2.1"
+      },
+      "ULTIMA_REVISION": "2022-01-29T03:45:33.117Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 123,
+      "NOMBRE": "Animal 123",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 91,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 96,
+      "RM": 4,
+      "TEMPERATURA": "33.8",
+      "UBICACION": {
+        "LAT": "4.7",
+        "LNG": "0.5"
+      },
+      "ULTIMA_REVISION": "2021-05-19T08:38:25.493Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 124,
+      "NOMBRE": "Animal 124",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 70,
+      "ESPECIE": "OVINO",
+      "EDAD": 55,
+      "RM": 74,
+      "TEMPERATURA": "32.6",
+      "UBICACION": {
+        "LAT": "6.3",
+        "LNG": "8.8"
+      },
+      "ULTIMA_REVISION": "2019-07-12T15:51:18.063Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 125,
+      "NOMBRE": "Animal 125",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 70,
+      "ESPECIE": "PORCINO",
+      "EDAD": 87,
+      "RM": 79,
+      "TEMPERATURA": "30.8",
+      "UBICACION": {
+        "LAT": "4.2",
+        "LNG": "4.0"
+      },
+      "ULTIMA_REVISION": "2021-08-12T18:52:07.907Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 126,
+      "NOMBRE": "Animal 126",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 74,
+      "ESPECIE": "PORCINO",
+      "EDAD": 73,
+      "RM": 38,
+      "TEMPERATURA": "38.5",
+      "UBICACION": {
+        "LAT": "5.8",
+        "LNG": "7.3"
+      },
+      "ULTIMA_REVISION": "2024-09-23T00:00:39.190Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 127,
+      "NOMBRE": "Animal 127",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 133,
+      "ESPECIE": "OVINO",
+      "EDAD": 4,
+      "RM": 37,
+      "TEMPERATURA": "37.1",
+      "UBICACION": {
+        "LAT": "9.7",
+        "LNG": "0.7"
+      },
+      "ULTIMA_REVISION": "2019-02-23T18:33:28.738Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 128,
+      "NOMBRE": "Animal 128",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 60,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 60,
+      "RM": 16,
+      "TEMPERATURA": "36.7",
+      "UBICACION": {
+        "LAT": "2.9",
+        "LNG": "6.5"
+      },
+      "ULTIMA_REVISION": "2023-07-17T15:53:17.105Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 129,
+      "NOMBRE": "Animal 129",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 97,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 2,
+      "RM": 34,
+      "TEMPERATURA": "30.9",
+      "UBICACION": {
+        "LAT": "9.3",
+        "LNG": "2.5"
+      },
+      "ULTIMA_REVISION": "2020-07-30T16:10:39.929Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 130,
+      "NOMBRE": "Animal 130",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 89,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 88,
+      "RM": 5,
+      "TEMPERATURA": "37.9",
+      "UBICACION": {
+        "LAT": "9.6",
+        "LNG": "0.3"
+      },
+      "ULTIMA_REVISION": "2020-10-15T03:48:58.082Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 131,
+      "NOMBRE": "Animal 131",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 62,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 94,
+      "RM": 17,
+      "TEMPERATURA": "33.2",
+      "UBICACION": {
+        "LAT": "9.1",
+        "LNG": "2.4"
+      },
+      "ULTIMA_REVISION": "2020-12-22T05:20:09.462Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 132,
+      "NOMBRE": "Animal 132",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 56,
+      "ESPECIE": "PORCINO",
+      "EDAD": 8,
+      "RM": 64,
+      "TEMPERATURA": "39.4",
+      "UBICACION": {
+        "LAT": "5.0",
+        "LNG": "6.1"
+      },
+      "ULTIMA_REVISION": "2022-06-30T21:49:02.715Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 133,
+      "NOMBRE": "Animal 133",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 74,
+      "ESPECIE": "PORCINO",
+      "EDAD": 84,
+      "RM": 26,
+      "TEMPERATURA": "38.0",
+      "UBICACION": {
+        "LAT": "6.1",
+        "LNG": "3.0"
+      },
+      "ULTIMA_REVISION": "2021-02-04T09:24:07.431Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 134,
+      "NOMBRE": "Animal 134",
+      "ESTADO": "SANO",
+      "SEXO": "MACHO",
+      "PESO": 141,
+      "ESPECIE": "OVINO",
+      "EDAD": 43,
+      "RM": 17,
+      "TEMPERATURA": "36.4",
+      "UBICACION": {
+        "LAT": "2.9",
+        "LNG": "5.3"
+      },
+      "ULTIMA_REVISION": "2022-02-18T01:42:37.868Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 135,
+      "NOMBRE": "Animal 135",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 74,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 72,
+      "RM": 44,
+      "TEMPERATURA": "39.6",
+      "UBICACION": {
+        "LAT": "3.1",
+        "LNG": "4.3"
+      },
+      "ULTIMA_REVISION": "2023-03-04T11:36:29.924Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 136,
+      "NOMBRE": "Animal 136",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 93,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 15,
+      "RM": 79,
+      "TEMPERATURA": "39.6",
+      "UBICACION": {
+        "LAT": "1.1",
+        "LNG": "0.4"
+      },
+      "ULTIMA_REVISION": "2022-08-05T07:00:25.686Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 137,
+      "NOMBRE": "Animal 137",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 141,
+      "ESPECIE": "OVINO",
+      "EDAD": 56,
+      "RM": 31,
+      "TEMPERATURA": "31.6",
+      "UBICACION": {
+        "LAT": "4.7",
+        "LNG": "0.3"
+      },
+      "ULTIMA_REVISION": "2023-11-27T18:21:26.969Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 138,
+      "NOMBRE": "Animal 138",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 69,
+      "ESPECIE": "PORCINO",
+      "EDAD": 91,
+      "RM": 31,
+      "TEMPERATURA": "34.1",
+      "UBICACION": {
+        "LAT": "3.3",
+        "LNG": "2.8"
+      },
+      "ULTIMA_REVISION": "2019-01-23T08:01:37.912Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 139,
+      "NOMBRE": "Animal 139",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 94,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 66,
+      "RM": 91,
+      "TEMPERATURA": "39.5",
+      "UBICACION": {
+        "LAT": "0.6",
+        "LNG": "8.5"
+      },
+      "ULTIMA_REVISION": "2023-03-21T06:22:24.677Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 140,
+      "NOMBRE": "Animal 140",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 113,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 39,
+      "RM": 42,
+      "TEMPERATURA": "35.4",
+      "UBICACION": {
+        "LAT": "4.5",
+        "LNG": "3.5"
+      },
+      "ULTIMA_REVISION": "2021-03-09T06:08:49.691Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 141,
+      "NOMBRE": "Animal 141",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 69,
+      "ESPECIE": "BOVINO",
+      "EDAD": 29,
+      "RM": 77,
+      "TEMPERATURA": "35.2",
+      "UBICACION": {
+        "LAT": "2.2",
+        "LNG": "1.7"
+      },
+      "ULTIMA_REVISION": "2019-08-18T20:54:52.916Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 142,
+      "NOMBRE": "Animal 142",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 66,
+      "ESPECIE": "BOVINO",
+      "EDAD": 51,
+      "RM": 61,
+      "TEMPERATURA": "30.9",
+      "UBICACION": {
+        "LAT": "6.9",
+        "LNG": "6.0"
+      },
+      "ULTIMA_REVISION": "2021-04-06T20:28:46.242Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 143,
+      "NOMBRE": "Animal 143",
+      "ESTADO": "AGITADO",
+      "SEXO": "HEMBRA",
+      "PESO": 76,
+      "ESPECIE": "OVINO",
+      "EDAD": 24,
+      "RM": 31,
+      "TEMPERATURA": "31.9",
+      "UBICACION": {
+        "LAT": "7.4",
+        "LNG": "5.1"
+      },
+      "ULTIMA_REVISION": "2021-12-02T23:23:45.259Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 144,
+      "NOMBRE": "Animal 144",
+      "ESTADO": "ENFERMO",
+      "SEXO": "MACHO",
+      "PESO": 126,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 8,
+      "RM": 10,
+      "TEMPERATURA": "38.9",
+      "UBICACION": {
+        "LAT": "1.1",
+        "LNG": "3.3"
+      },
+      "ULTIMA_REVISION": "2023-06-27T08:06:51.931Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 145,
+      "NOMBRE": "Animal 145",
+      "ESTADO": "MUERTO",
+      "SEXO": "HEMBRA",
+      "PESO": 123,
+      "ESPECIE": "CAPRINO",
+      "EDAD": 37,
+      "RM": 66,
+      "TEMPERATURA": "34.5",
+      "UBICACION": {
+        "LAT": "4.4",
+        "LNG": "0.1"
+      },
+      "ULTIMA_REVISION": "2024-09-01T05:02:25.311Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 146,
+      "NOMBRE": "Animal 146",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 64,
+      "ESPECIE": "BOVINO",
+      "EDAD": 89,
+      "RM": 71,
+      "TEMPERATURA": "33.4",
+      "UBICACION": {
+        "LAT": "6.6",
+        "LNG": "4.2"
+      },
+      "ULTIMA_REVISION": "2020-06-28T16:44:27.113Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 147,
+      "NOMBRE": "Animal 147",
+      "ESTADO": "SANO",
+      "SEXO": "HEMBRA",
+      "PESO": 79,
+      "ESPECIE": "AVES_DE_CORRAL",
+      "EDAD": 42,
+      "RM": 49,
+      "TEMPERATURA": "33.6",
+      "UBICACION": {
+        "LAT": "5.3",
+        "LNG": "2.2"
+      },
+      "ULTIMA_REVISION": "2023-03-19T07:13:12.799Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 148,
+      "NOMBRE": "Animal 148",
+      "ESTADO": "AGITADO",
+      "SEXO": "MACHO",
+      "PESO": 106,
+      "ESPECIE": "PORCINO",
+      "EDAD": 97,
+      "RM": 43,
+      "TEMPERATURA": "37.6",
+      "UBICACION": {
+        "LAT": "4.2",
+        "LNG": "1.4"
+      },
+      "ULTIMA_REVISION": "2023-09-14T04:55:21.330Z",
+      "PAZO_LOS_LIMITES": 0
+    },
+    {
+      "id": 149,
+      "NOMBRE": "Animal 149",
+      "ESTADO": "ENFERMO",
+      "SEXO": "HEMBRA",
+      "PESO": 53,
+      "ESPECIE": "BOVINO",
+      "EDAD": 62,
+      "RM": 18,
+      "TEMPERATURA": "35.1",
+      "UBICACION": {
+        "LAT": "3.2",
+        "LNG": "4.8"
+      },
+      "ULTIMA_REVISION": "2022-05-23T11:18:21.498Z",
+      "PAZO_LOS_LIMITES": 1
+    },
+    {
+      "id": 150,
+      "NOMBRE": "Animal 150",
+      "ESTADO": "MUERTO",
+      "SEXO": "MACHO",
+      "PESO": 138,
+      "ESPECIE": "OVINO",
+      "EDAD": 48,
+      "RM": 39,
+      "TEMPERATURA": "31.2",
+      "UBICACION": {
+        "LAT": "3.9",
+        "LNG": "9.8"
+      },
+      "ULTIMA_REVISION": "2019-08-18T23:46:40.489Z",
+      "PAZO_LOS_LIMITES": 1
+    }
+  ]
+}
