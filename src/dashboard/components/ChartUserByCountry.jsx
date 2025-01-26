@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import Stack from '@mui/material/Stack';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
 import { useState, useEffect } from 'react';
-import GetAnimales from '../Services/GetAnimales.jsx';  
+import GetAnimales from '../services/GetAnimales.jsx';  
 
 const StyledText = styled('text', {
   shouldForwardProp: (prop) => prop !== 'variant',
@@ -73,11 +73,11 @@ PieCenterLabel.propTypes = {
 };
 
 const colors = [
-  'hsl(220, 20%, 65%)',
-  'hsl(220, 20%, 42%)',
-  'hsl(220, 20%, 35%)',
-  'hsl(220, 20%, 25%)',
-  'hsl(220, 20%, 18%)',
+  'hsl(220, 87.30%, 49.20%)',
+  'hsl(196, 95.90%, 71.40%)',
+  'hsl(170, 92.00%, 34.50%)',
+  'hsl(129, 90.30%, 51.60%)',
+  'hsl(93, 93.30%, 34.90%)',
 ];
 
 export default function ChartUserBySpecies() {
@@ -153,7 +153,7 @@ export default function ChartUserBySpecies() {
               {item.label}
             </Typography>
             <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-              {item.value} animales
+              {item.value} :
             </Typography>
             <LinearProgress
               variant="determinate"

@@ -7,7 +7,7 @@ import Chip from '@mui/material/Chip';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import { LineChart } from '@mui/x-charts/LineChart';
-import { getAnimalesDeUsuarioRM } from '../Services/GetAnimales';
+import { getAnimalesDeUsuarioRM } from '../services/GetAnimales';
 import { useEffect } from 'react';
 import { getCookie } from '../../utils/cookies';
 
