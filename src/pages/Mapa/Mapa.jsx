@@ -123,7 +123,7 @@ const Mapa = () => {
             console.log(fincaData, "viendo que sale de finca data");
             console.log(safetyCounter);
 
-      ñ      areas.push({
+            areas.push({
               id: fincaData.id,
               coordinates: fincaData.UBICACION,
             });
