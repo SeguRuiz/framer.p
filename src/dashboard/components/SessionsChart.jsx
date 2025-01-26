@@ -7,6 +7,9 @@ import Chip from "@mui/material/Chip";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import { LineChart } from "@mui/x-charts/LineChart";
+import GetAnimales, { GetAnimal } from "../../services/Animales/GetAnimales";
+import { getAnimalesDeUsuario } from "../Services/GetAnimales";
+import { getCookie } from "../../utils/cookies";
 
 function AreaGradient({ color, id }) {
   return (
@@ -40,19 +43,34 @@ function getDaysInMonth(month, year) {
 }
 
 export default function SessionsChart() {
+  const userId = atob(getCookie('data'))
   const theme = useTheme();
   const data = getDaysInMonth(
     new Date(Date.now()).getMonth(),
     new Date(Date.now()).getFullYear()
   );
-
-  
-
+  const [animalesRM, setAnimales] = React.useState([]);
   const colorPalette = [
     theme.palette.primary.light,
     theme.palette.primary.main,
     theme.palette.primary.dark,
   ];
+
+  React.useEffect(() => {
+    (async () => {
+     const animales =  await getAnimalesDeUsuario(userId)
+     console.log(animales);
+     
+      const RMS = [];
+      // const animales = await GetAnimales();
+
+      // animales.forEach((e) => {
+      //   RMS.push(e.RM);
+      // });
+
+      // setAnimales(RMS);
+    })();
+  }, []);
 
   return (
     <Card variant="outlined" sx={{ width: "100%" }}>
@@ -89,16 +107,15 @@ export default function SessionsChart() {
           ]}
           series={[
             {
-              id: "direct",
-              label: "Direct",
+              id: "HeartRate",
+              label: "RM general",
               showMark: false,
               curve: "linear",
               stack: "total",
               area: true,
               stackOrder: "ascending",
-              data: [300, 900],
+              data: animalesRM,
             },
-           
           ]}
           height={250}
           margin={{ left: 50, right: 20, top: 20, bottom: 20 }}
