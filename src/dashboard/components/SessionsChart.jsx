@@ -114,7 +114,7 @@ export default function SessionsChart() {
               stack: 'total',
               area: true,
               stackOrder: 'ascending',
-              data: animales,
+              data: animales
             },
            
           ]}
