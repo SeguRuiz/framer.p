@@ -8,7 +8,7 @@ import GetUsuarios, {
   GetUsuario,
 } from "../../services/Usuarios/GetUsuarios.jsx";
 import GetFincas from "../../dashboard/Services/GetFincas.jsx";
-import GetAnimales from "../../dashboard/Services/GetAnimales.jsx";
+import GetAnimales from "../../dashboard/services/GetAnimales.jsx";
 
 const Mapa = () => {
   const mapContainerRef = useRef();

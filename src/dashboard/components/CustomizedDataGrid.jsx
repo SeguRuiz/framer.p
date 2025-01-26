@@ -3,7 +3,7 @@ import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../internals/data/gridData.jsx";
 import ExpedienteModal from "../../components/Modal/ExpedienteVaca.jsx";
 //import GetAnimales from '../../services/Animales/GetAnimales.jsx';
-import { getAnimalesDeUsuario } from "../Services/GetAnimales.jsx";
+import { getAnimalesDeUsuario } from "../services/GetAnimales.jsx";
 import { getCookie } from "../../utils/cookies.js";
 
 export default function CustomizedDataGrid() {

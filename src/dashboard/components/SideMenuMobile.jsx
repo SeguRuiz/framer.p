@@ -44,7 +44,7 @@ function SideMenuMobile({ open, toggleDrawer }) {
               sx={{ width: 24, height: 24 }}
             />
             <Typography component="p" variant="h6">
-              Riley Carter
+    
             </Typography>
           </Stack>
           <MenuButton showBadge>

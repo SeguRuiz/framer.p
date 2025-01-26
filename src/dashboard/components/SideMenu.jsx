@@ -5,7 +5,7 @@ import Box from "@mui/material/Box";
 import Divider from "@mui/material/Divider";
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
-import SelectContent from "./SelectContent.jsx";
+import SelectContent from "../components/containerLogo.jsx";
 import MenuContent from "./MenuContent.jsx";
 import OptionsMenu from "./OptionsMenu.jsx";
 import { getCookie } from "../../utils/cookies.js";

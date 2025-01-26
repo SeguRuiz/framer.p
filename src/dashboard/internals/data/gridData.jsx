@@ -80,7 +80,7 @@ export const columns = [
   { field: "id", headerName: "ID", flex: 1.5, minWidth: 50 },
   {
     field: "ESTADO",
-    headerName: "Status",
+    headerName: "Estado",
     flex: 0.5,
     minWidth: 120,
     renderCell: (params) => renderStatus(params.value),
@@ -95,7 +95,7 @@ export const columns = [
   },
   {
     field: "SEXO",
-    headerName: "Rasa A",
+    headerName: "Raza A",
     headerAlign: "right",
     align: "right",
     flex: 1,
