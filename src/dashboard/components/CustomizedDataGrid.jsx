@@ -2,37 +2,40 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../internals/data/gridData.jsx";
 import ExpedienteModal from "../../components/Modal/ExpedienteVaca.jsx";
-import GetAnimales from '../../services/Animales/GetAnimales.jsx';
+//import GetAnimales from '../../services/Animales/GetAnimales.jsx';
+import { getAnimalesDeUsuario } from "../Services/GetAnimales.jsx";
+import { getCookie } from "../../utils/cookies.js";
 
 export default function CustomizedDataGrid() {
-  const [animales, setAnimales] = React.useState([])
-  React.useEffect(()=>{
+  const [animales, setAnimales] = React.useState([]);
+  const idusuario = atob(getCookie("data"));
+  React.useEffect(() => {
     async function mostrarAnimales() {
       try {
-        
-          const animales = await GetAnimales();
-         
+        const animales = await getAnimalesDeUsuario(idusuario);
 
-            // Función para quitar guiones bajos y convertir la primera letra de cada palabra en mayúscula
-            const quitarGuionesBajos = (str) => {
-              return str.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase());
-          };
+        // Función para quitar guiones bajos y convertir la primera letra de cada palabra en mayúscula
+        const quitarGuionesBajos = (str) => {
+          return str.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase());
+        };
 
-           // Convertir los nombres de los animales a minúsculas
-          const animalesEnMinusculas = animales.map(animal => ({
-            ...animal,
-            SEXO: animal.SEXO ? animal.SEXO.toLowerCase() : animal.SEXO,  // Convertir a minusculas
-            ESPECIE: animal.ESPECIE ? quitarGuionesBajos(animal.ESPECIE.toLowerCase()) : animal.ESPECIE,  
-          }));
+        // Convertir los nombres de los animales a minúsculas
+        const animalesEnMinusculas = animales[1].map((animal) => ({
+          ...animal,
+          SEXO: animal.SEXO ? animal.SEXO.toLowerCase() : animal.SEXO, // Convertir a minusculas
+          ESPECIE: animal.ESPECIE
+            ? quitarGuionesBajos(animal.ESPECIE.toLowerCase())
+            : animal.ESPECIE,
+        }));
 
-          setAnimales(animalesEnMinusculas)
+        setAnimales(animalesEnMinusculas);
       } catch (error) {
-          console.error('Error al obtener los animales:', error);
+        console.error("Error al obtener los animales:", error);
       }
     }
-    
+
     mostrarAnimales();
-  },[])
+  }, []);
   const [open, setOpen] = React.useState();
   const [id, setId] = React.useState(null);
   return (
@@ -47,7 +50,7 @@ export default function CustomizedDataGrid() {
           setOpen(true);
         }}
         getRowClassName={(params) =>
-          params.indexRelativeToCurrentPage % 2 === 0 ? "even" : "odd"
+          params.indexRelativeToCurrentPage % 2 == 0 ? "even" : "odd"
         }
         initialState={{
           pagination: { paginationModel: { pageSize: 20 } },

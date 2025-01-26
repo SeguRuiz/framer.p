@@ -80,7 +80,7 @@ export function renderAvatar(
 
 ///// Columnas del listado principal
 export const columns: GridColDef[] = [
-  { field: 'pageTitle', headerName: 'Page Title', flex: 1.5, minWidth: 200 },
+  { field: 'id', headerName: 'id', flex: 1.5, minWidth: 200 },
   {
     field: 'status',
     headerName: 'Status',
