@@ -18,7 +18,7 @@ export const brand = {
 };
 
 export const gray = {
-  50: 'hsl(220, 35%, 97%)',
+  50: 'hsl(120, 33.30%, 97.10%)',
   100: 'hsl(220, 30%, 94%)',
   200: 'hsl(220, 20%, 88%)',
   300: 'hsl(220, 20%, 80%)',
@@ -137,7 +137,7 @@ export const getDesignTokens = (mode) => {
       },
       divider: mode === 'dark' ? alpha(gray[700], 0.6) : alpha(gray[300], 0.4),
       background: {
-        default: 'hsl(0, 0%, 99%)',
+        default: 'hsl(0, 0.00%, 98.80%)',
         paper: 'hsl(220, 35%, 97%)',
         ...(mode === 'dark' && { default: gray[900], paper: 'hsl(220, 30%, 7%)' }),
       },
@@ -146,7 +146,7 @@ export const getDesignTokens = (mode) => {
         secondary: gray[600],
         warning: orange[400],
         ...(mode === 'dark' && {
-          primary: 'hsl(0, 0%, 100%)',
+          primary: 'hsl(0, 92.50%, 52.70%)',
           secondary: gray[400],
         }),
       },
@@ -248,11 +248,14 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
+
+      //MODO CLARO
       divider: alpha(gray[300], 0.4),
       background: {
-        default: 'hsl(0, 0%, 99%)',
-        paper: 'hsl(220, 35%, 97%)',
+        default: 'hsl(107, 20.50%, 82.70%)',
+        paper: 'rgba(134, 179, 134, 0.96)',
       },
+      ///
       text: {
         primary: gray[800],
         secondary: gray[600],
@@ -301,7 +304,9 @@ export const colorSchemes = {
       divider: alpha(gray[700], 0.6),
       background: {
         default: gray[900],
-        paper: 'hsl(220, 30%, 7%)',
+        //MODO OSCURO
+        paper: 'rgba(41, 72, 100, 0.62)',
+        //
       },
       text: {
         primary: 'hsl(0, 0%, 100%)',
