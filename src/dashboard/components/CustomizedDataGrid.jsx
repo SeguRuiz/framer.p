@@ -2,44 +2,39 @@ import * as React from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import { columns, rows } from "../internals/data/gridData.jsx";
 import ExpedienteModal from "../../components/Modal/ExpedienteVaca.jsx";
-import GetAnimales from '../../services/Animales/GetAnimales.jsx';
-
+import GetAnimales from "../../services/Animales/GetAnimales.jsx";
+import { ANIMALES_GANADO_ESPECIES } from "../../constants/animals.d.js";
 export default function CustomizedDataGrid() {
-  const [animales, setAnimales] = React.useState([])
-  React.useEffect(()=>{
+  const [animales, setAnimales] = React.useState([]);
+  React.useEffect(() => {
     async function mostrarAnimales() {
       try {
-        
-          const animales = await GetAnimales();
-         
+        const animales = await GetAnimales();
 
-            // Función para quitar guiones bajos y convertir la primera letra de cada palabra en mayúscula
-            const quitarGuionesBajos = (str) => {
-              return str.replace(/_([a-z])/g, (match, p1) => p1.toUpperCase());
-          };
+        // Convertir los nombres de los animales a minúsculas
+        const animalesEnMinusculas = animales.map((animal) => ({
+          ...animal,
+          SEXO: animal.SEXO ? animal.SEXO.toLowerCase() : animal.SEXO, // Convertir a minusculas
+          ESPECIE:
+            animal.ESPECIE == ANIMALES_GANADO_ESPECIES.AVES_DE_CORRAL
+              ? "ave de corral"
+              : animal.ESPECIE.toLowerCase(),
+        }));
 
-           // Convertir los nombres de los animales a minúsculas
-          const animalesEnMinusculas = animales.map(animal => ({
-            ...animal,
-            SEXO: animal.SEXO ? animal.SEXO.toLowerCase() : animal.SEXO,  // Convertir a minusculas
-            ESPECIE: animal.ESPECIE ? quitarGuionesBajos(animal.ESPECIE.toLowerCase()) : animal.ESPECIE,  
-          }));
-
-          setAnimales(animalesEnMinusculas)
+        setAnimales(animalesEnMinusculas);
       } catch (error) {
-          console.error('Error al obtener los animales:', error);
+        console.error("Error al obtener los animales:", error);
       }
     }
-    
+
     mostrarAnimales();
-  },[])
+  }, []);
   const [open, setOpen] = React.useState();
   const [id, setId] = React.useState(null);
   return (
     <>
       <ExpedienteModal id={id} setId={setId} open={open} setOpen={setOpen} />
       <DataGrid
-        checkboxSelection
         rows={animales}
         columns={columns}
         onRowClick={(event) => {

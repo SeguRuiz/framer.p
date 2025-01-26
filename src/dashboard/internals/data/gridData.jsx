@@ -51,7 +51,7 @@ function renderStatus(status) {
   const colors = {
     MUERTO: "error",
     SANO: "success",
-    ENFERMO: "default"
+    ENFERMO: "warning"
   };
 
   return <Chip label={status} color={colors[status]} size="small" />;
@@ -82,7 +82,7 @@ export const columns = [
     field: "ESTADO",
     headerName: "Status",
     flex: 0.5,
-    minWidth: 80,
+    minWidth: 120,
     renderCell: (params) => renderStatus(params.value),
   },
   {
@@ -93,7 +93,6 @@ export const columns = [
     flex: 1,
     minWidth: 80,
   },
- 
   {
     field: "SEXO",
     headerName: "Rasa A",
@@ -116,7 +115,7 @@ export const columns = [
     headerAlign: "right",
     align: "right",
     flex: 1,
-    minWidth: 100,
+    minWidth: 150,
   },
   {
     field: "EDAD",
@@ -126,13 +125,13 @@ export const columns = [
     flex: 1,
     minWidth: 100,
   },
-
   {
     field: "TEMPERATURA",
     headerName: "Temperatura",
+    headerAlign: "right",
     flex: 1,
     minWidth: 150,
-    
+    align: "right",
   },
 ];
 
