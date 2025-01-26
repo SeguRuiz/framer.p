@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import GetAnimales from '../Services/GetAnimales.jsx'; 
+import GetAnimales from '../services/GetAnimales.jsx'; 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';

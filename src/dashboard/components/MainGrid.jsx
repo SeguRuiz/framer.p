@@ -1,24 +1,28 @@
-// main.jsx
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Box, Grid, Typography } from '@mui/material';
-import GetAnimales from '../services/GetAnimales'; 
+import { Box, Grid2, Typography } from '@mui/material';
+
+import { getAnimalesDeUsuario } from '../services/GetAnimales.jsx';
 import StatCard from '../components/StatCard';
 import CustomizedDataGrid from '../components/CustomizedDataGrid';
 import CustomizedTreeView from '../components/CustomizedTreeView';
 import ChartUserByCountry from '../components/ChartUserByCountry';
 import Copyright from '../internals/components/Copyright.jsx';
+import { getCookie } from '../../utils/cookies.js';
 
 export default function MainGrid() {
   const { page } = useSelector((x) => x.Page);
   const [tarjetas, setTarjetas] = useState([]);
   const [loading, setLoading] = useState(true); // Estado de carga
   const [error, setError] = useState(null); // Estado de error
+  const UserId = atob(getCookie('data'))
 
   const calcularPorcentajes = (animales) => {
     const totalAnimales = 150; // Total de animales
     const estados = animales.reduce((acc, animal) => {
-      acc[animal.ESTADO] = (acc[animal.ESTADO] || 0) + 1;
+      if (animal.ESTADO !== 'AGITADO') { // Excluir el estado "Agitado"
+        acc[animal.ESTADO] = (acc[animal.ESTADO] || 0) + 1;
+      }
       return acc;
     }, {});
     
@@ -26,6 +30,7 @@ export default function MainGrid() {
       estado,
       cantidad: count,
       porcentaje: (count / totalAnimales) * 100,
+      color: getColorByEstado(estado), // Agregar color aquí
     }));
   };
 
@@ -48,10 +53,14 @@ export default function MainGrid() {
         setLoading(true); // Iniciar carga
         setError(null); // Resetear error
 
-        const animales = await GetAnimales();
+        const animales = await getAnimalesDeUsuario(UserId);
+       
+        
         if (!Array.isArray(animales)) {
           throw new Error('El servidor no devolvió un array válido.');
         }
+        
+        
 
         const porcentajes = calcularPorcentajes(animales);
         console.log(porcentajes);
@@ -78,36 +87,34 @@ export default function MainGrid() {
   return (
     <Box sx={{ width: '100%', maxWidth: { sm: '100%', md: '1700px' } }}>
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Overview
+        Estado
       </Typography>
 
-      <Grid container spacing={2} columns={12} sx={{ mb: (theme) => theme.spacing(2) }}>
+      <Grid2 container spacing={2} columns={12} sx={{ mb: (theme) => theme.spacing(2) }}>
         {tarjetas.map((card, index) => (
-          <Grid item key={index} xs={12} sm={6} lg={4}>
+          <Grid2 item key={index} xs={12} sm={6} lg={4}>
             <StatCard 
               title={card.estado || "Sin título"}
               value={`${card.cantidad || 0} animales`} 
-              data={[card.porcentaje]} // Usamos el porcentaje como dato de ejemplo
               interval={`${card.porcentaje.toFixed(2)}%`} // Mostramos el porcentaje
-              trend="neutral" // Ejemplo de tendencia
-              color={getColorByEstado(card.estado)} // Color basado en el estado
+              color={card.color} // Pasar el color
             />
-          </Grid>
+          </Grid2>
         ))}
-      </Grid>
+      </Grid2>
 
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
         Details
       </Typography>
-      <Grid container spacing={2} columns={12}>
-        <Grid item xs={12} lg={9}>
+      <Grid2 container spacing={2} columns={12}>
+        <Grid2 item xs={12} lg={9}>
           <CustomizedDataGrid />
-        </Grid>
-        <Grid item xs={12} lg={3}>
+        </Grid2>
+        <Grid2 item xs={12} lg={3}>
           <CustomizedTreeView />
           <ChartUserByCountry />
-        </Grid>
-      </Grid>
+        </Grid2>
+      </Grid2>
       <Copyright sx={{ my: 4 }} />
     </Box>
   );
