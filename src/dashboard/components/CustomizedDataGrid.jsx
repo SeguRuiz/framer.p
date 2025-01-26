@@ -4,15 +4,19 @@ import { columns, rows } from "../internals/data/gridData.jsx";
 import ExpedienteModal from "../../components/Modal/ExpedienteVaca.jsx";
 import GetAnimales from "../../services/Animales/GetAnimales.jsx";
 import { ANIMALES_GANADO_ESPECIES } from "../../constants/animals.d.js";
+import { getAnimalesDeUsuario } from "../Services/GetAnimales.jsx";
+import { getCookie } from "../../utils/cookies.js";
 export default function CustomizedDataGrid() {
   const [animales, setAnimales] = React.useState([]);
+  const usuario_id = atob(getCookie("data"));
   React.useEffect(() => {
     async function mostrarAnimales() {
       try {
-        const animales = await GetAnimales();
-
+        const animales = await getAnimalesDeUsuario(usuario_id);
+         console.log(animales);
+         
         // Convertir los nombres de los animales a minúsculas
-        const animalesEnMinusculas = animales.map((animal) => ({
+        const animalesEnMinusculas = animales[1].map((animal) => ({
           ...animal,
           SEXO: animal.SEXO ? animal.SEXO.toLowerCase() : animal.SEXO, // Convertir a minusculas
           ESPECIE:
