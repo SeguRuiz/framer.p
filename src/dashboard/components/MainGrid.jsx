@@ -56,7 +56,7 @@ export default function MainGrid() {
     
       {/* cards */}
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Overview
+        Datos de salud
       </Typography>
       
       <Grid
@@ -79,7 +79,7 @@ export default function MainGrid() {
         </Grid>
       </Grid>
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Details
+        Detalles
       </Typography>
       <Grid container spacing={2} columns={12}>
         <Grid size={{ xs: 12, lg: 9 }}>

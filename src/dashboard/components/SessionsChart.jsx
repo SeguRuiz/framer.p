@@ -1,15 +1,15 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { useTheme } from "@mui/material/styles";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
-import Typography from "@mui/material/Typography";
-import Stack from "@mui/material/Stack";
-import { LineChart } from "@mui/x-charts/LineChart";
-import GetAnimales, { GetAnimal } from "../../services/Animales/GetAnimales";
-import { getAnimalesDeUsuario } from "../Services/GetAnimales";
-import { getCookie } from "../../utils/cookies";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { useTheme } from '@mui/material/styles';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import Chip from '@mui/material/Chip';
+import Typography from '@mui/material/Typography';
+import Stack from '@mui/material/Stack';
+import { LineChart } from '@mui/x-charts/LineChart';
+import { getAnimalesDeUsuarioRM } from '../Services/GetAnimales';
+import { useEffect } from 'react';
+import { getCookie } from '../../utils/cookies';
 
 function AreaGradient({ color, id }) {
   return (
@@ -45,38 +45,40 @@ function getDaysInMonth(month, year) {
 export default function SessionsChart() {
   const userId = atob(getCookie('data'))
   const theme = useTheme();
-  const data = getDaysInMonth(
-    new Date(Date.now()).getMonth(),
-    new Date(Date.now()).getFullYear()
-  );
-  const [animalesRM, setAnimales] = React.useState([]);
+  const data = getDaysInMonth(new Date(Date.now()).getMonth(), new Date(Date.now()).getFullYear());
+  const [animales, setAnimales] = React.useState([])
+
+  const idusuario = atob(getCookie("data"))
+
+  console.log(animales);
+  
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const animalesData = await getAnimalesDeUsuarioRM(idusuario);
+        setAnimales(animalesData[1]); // Establecer los animales en el estado
+      } catch (error) {
+        console.error("Error al obtener los datos", error.message); 
+        console.error("Detalles del error:", error); 
+      }
+    };
+  
+    fetchData();
+  }, []);
+
   const colorPalette = [
     theme.palette.primary.light,
     theme.palette.primary.main,
     theme.palette.primary.dark,
   ];
 
-  React.useEffect(() => {
-    (async () => {
-     const animales =  await getAnimalesDeUsuario(userId)
-     console.log(animales);
-     
-      const RMS = [];
-      // const animales = await GetAnimales();
-
-      // animales.forEach((e) => {
-      //   RMS.push(e.RM);
-      // });
-
-      // setAnimales(RMS);
-    })();
-  }, []);
+ 
 
   return (
     <Card variant="outlined" sx={{ width: "100%" }}>
       <CardContent>
         <Typography component="h2" variant="subtitle2" gutterBottom>
-          Sessions
+          Seguimiento del ganado
         </Typography>
         <Stack sx={{ justifyContent: "space-between" }}>
           <Stack
@@ -92,8 +94,8 @@ export default function SessionsChart() {
             </Typography>
             <Chip size="small" color="success" label="+35%" />
           </Stack>
-          <Typography variant="caption" sx={{ color: "text.secondary" }}>
-            Sessions per day for the last 30 days
+          <Typography variant="caption" sx={{ color: 'text.secondary' }}>
+            Seguimiento de los ultimos 30 dias
           </Typography>
         </Stack>
         <LineChart
@@ -106,15 +108,16 @@ export default function SessionsChart() {
             },
           ]}
           series={[
+          
             {
-              id: "HeartRate",
-              label: "RM general",
+              id: 'referral',
+              label: 'Animales RM',
               showMark: false,
-              curve: "linear",
-              stack: "total",
+              curve: 'linear',
+              stack: 'total',
               area: true,
-              stackOrder: "ascending",
-              data: animalesRM,
+              stackOrder: 'ascending',
+              data: animales
             },
           ]}
           height={250}
