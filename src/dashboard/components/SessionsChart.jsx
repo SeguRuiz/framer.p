@@ -43,6 +43,7 @@ function getDaysInMonth(month, year) {
 }
 
 export default function SessionsChart() {
+  const userId = atob(getCookie('data'))
   const theme = useTheme();
   const data = getDaysInMonth(new Date(Date.now()).getMonth(), new Date(Date.now()).getFullYear());
   const [animales, setAnimales] = React.useState([])
@@ -70,6 +71,22 @@ export default function SessionsChart() {
     theme.palette.primary.main,
     theme.palette.primary.dark,
   ];
+
+  React.useEffect(() => {
+    (async () => {
+     const animales =  await getAnimalesDeUsuario(userId)
+     console.log(animales);
+     
+      const RMS = [];
+      // const animales = await GetAnimales();
+
+      // animales.forEach((e) => {
+      //   RMS.push(e.RM);
+      // });
+
+      // setAnimales(RMS);
+    })();
+  }, []);
 
   return (
     <Card variant="outlined" sx={{ width: "100%" }}>
@@ -116,7 +133,6 @@ export default function SessionsChart() {
               stackOrder: 'ascending',
               data: animales
             },
-           
           ]}
           height={250}
           margin={{ left: 50, right: 20, top: 20, bottom: 20 }}
