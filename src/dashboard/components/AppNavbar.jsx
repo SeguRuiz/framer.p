@@ -65,10 +65,10 @@ export default function AppNavbar() {
             sx={{ justifyContent: 'center', mr: 'auto' }}
           >
            
-            <Typography variant="h4" component="h1" sx={{ color: 'text.primary' }}>
-             <img src={LogoStockafe} alt=""
+          
+             <img src={LogoStockafe} alt="" 
              width={'150'} />
-            </Typography>
+           
           </Stack>
           <ColorModeIconDropdown />
           <MenuButton aria-label="menu" onClick={toggleDrawer(true)}>
