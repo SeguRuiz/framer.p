@@ -10,6 +10,8 @@ import Dashboard from "./dashboard/Dashboard";
 import SignInSide from "./sign-in-side/SignInSide";
 import { getCookie } from "./utils/cookies";
 
+import PCambio_estado from "./pages/PCambio_estado/PCambio_estado";
+
 const Pages = [];
 
 function App() {
@@ -18,7 +20,7 @@ function App() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    userInfo && navigate("/admin/home");
+    // userInfo && !location.pathname.includes('admin') && navigate("/admin/home");
   }, [location.pathname]);
 
   return (

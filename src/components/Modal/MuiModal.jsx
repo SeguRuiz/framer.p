@@ -4,7 +4,7 @@ import {
   DialogActions,
   DialogContent,
   DialogContentText,
-  DialogTitle,
+  DialogTitle
 } from "@mui/material";
 
 export const MuiModal = ({
@@ -16,6 +16,7 @@ export const MuiModal = ({
   fullWidth = false,
   setOpen,
   Info = false,
+ 
 }) => {
   return (
     <>
@@ -26,6 +27,7 @@ export const MuiModal = ({
         }}
         maxWidth={maxWidth}
         fullWidth={fullWidth}
+        
       >
         <DialogTitle>{Title}</DialogTitle>
         <DialogContent>

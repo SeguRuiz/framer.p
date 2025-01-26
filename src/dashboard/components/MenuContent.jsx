@@ -20,7 +20,7 @@ import { useLocation, useNavigate } from "react-router";
 
 const mainListItems = [
   { text: "Home", icon: <HomeRoundedIcon />, link: "/admin/home" },
-  { text: "Mapa", icon: <MapRoundedIcon />, link: "/mapa" },
+  { text: "Mapa", icon: <MapRoundedIcon />, link: "/admin/mapa" },
   { text: "Usuarios", icon: <PeopleRoundedIcon />, link: "/admin/usuarios" },
 ];
 

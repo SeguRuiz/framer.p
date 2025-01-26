@@ -7,7 +7,6 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import SelectContent from "./SelectContent.jsx";
 import MenuContent from "./MenuContent.jsx";
-import CardAlert from "./CardAlert.jsx";
 import OptionsMenu from "./OptionsMenu.jsx";
 import { getCookie } from "../../utils/cookies.js";
 import { useEffect, useState } from "react";
