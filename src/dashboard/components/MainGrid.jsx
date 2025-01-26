@@ -18,33 +18,34 @@ import { useSelector } from 'react-redux';
 //////// Estos objetos es la data de los primeros 3 graficos
 const data = [
   {
-    title: 'Users',
-    value: '14k',
-    interval: 'Last 30 days',
+    title: 'animales Sanos',
+    value: '24',
+    interval: 'ultimos 30 dias',
     trend: 'up',
     data: [
-      200, 24, 220, 260, 240, 380, 100, 240, 280, 240, 300, 340, 320, 360, 340, 380,
-      360, 400, 380, 420, 400, 640, 340, 460, 440, 480, 460, 600, 880, 920,
+      400, 384, 280, 260, 420, 380, 300, 340, 280, 340, 300, 340, 420, 450,
+       340, 280, 480, 430, 444, 470, 455, 420, 390, 400
+     
     ],
   },
   {
-    title: 'Conversions',
-    value: '325',
-    interval: 'Last 30 days',
+    title: 'Decesos',
+    value: '16',
+    interval: 'Ultimos 30 dias',
     trend: 'down',
     data: [
-      1640, 1250, 970, 1130, 1050, 900, 720, 1080, 900, 450, 920, 820, 840, 600, 820,
-      780, 800, 760, 380, 740, 660, 620, 840, 500, 520, 480, 400, 360, 300, 220,
+      140, 150, 90, 180, 150, 200, 220, 180, 144, 122, 178, 188, 103, 140, 200,
+      
     ],
   },
   {
-    title: 'Event count',
-    value: '200k',
-    interval: 'Last 30 days',
+    title: 'Animales Enfermos',
+    value: '10',
+    interval: 'Ultimos 30 dias',
     trend: 'neutral',
     data: [
-      500, 400, 510, 530, 520, 600, 530, 520, 510, 730, 520, 510, 530, 620, 510, 530,
-      520, 410, 530, 520, 610, 530, 520, 610, 530, 420, 510, 430, 520, 510,
+      250, 230, 210, 260, 220, 130, 190, 220, 280, 290,
+      
     ],
   },
 ];

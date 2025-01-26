@@ -3,27 +3,28 @@ import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { Box } from "@mui/material";
+import axios from "axios";
+
+
+// Ejemplo de uso
 
 const Mapa = () => {
   const mapContainerRef = useRef();
   const mapRef = useRef();
 
- 
   useEffect(() => {
     if (mapContainerRef.current) {
       mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_ACCESS_TOKEN;
 
       mapRef.current = new mapboxgl.Map({
         container: mapContainerRef.current,
-        style:"mapbox://styles/mapbox/streets-v11",
+        style: "mapbox://styles/mapbox/streets-v11",
         center: [-84.86459798912047, 10.182045912155333],
         zoom: 17,
         border: "solid 2px #ffffff",
         padding: "5px",
         heigt: "400px",
         with: "100%",
-        
-        
       });
 
       //empieza perimetro

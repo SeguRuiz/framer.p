@@ -90,9 +90,9 @@ export default function SessionsChart() {
             }}
           >
             <Typography variant="h4" component="p">
-              13,277
+              cantidad 50
             </Typography>
-            <Chip size="small" color="success" label="+35%" />
+            <Chip size="small" color="success" label="+100%" />
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
             Seguimiento de los ultimos 30 dias

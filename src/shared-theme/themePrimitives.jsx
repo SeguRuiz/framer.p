@@ -248,11 +248,14 @@ export const colorSchemes = {
       grey: {
         ...gray,
       },
+
+      //MODO CLARO
       divider: alpha(gray[300], 0.4),
       background: {
         default: 'hsl(107, 20.50%, 82.70%)',
         paper: 'rgba(134, 179, 134, 0.96)',
       },
+      ///
       text: {
         primary: gray[800],
         secondary: gray[600],
@@ -301,7 +304,9 @@ export const colorSchemes = {
       divider: alpha(gray[700], 0.6),
       background: {
         default: gray[900],
-        paper: ' #0062B6',
+        //MODO OSCURO
+        paper: 'rgba(41, 72, 100, 0.62)',
+        //
       },
       text: {
         primary: 'hsl(0, 0%, 100%)',
