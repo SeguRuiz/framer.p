@@ -67,6 +67,14 @@ function PieCenterLabel({ primaryText, secondaryText }) {
   );
 }
 
+const custom = {
+  'BOVINO':'Bovinos',
+  'PORCINO': 'Porcino',
+  'CAPRINO': 'Caprino',
+  'OVINO': 'Ovino',
+  'AVES_DE_CORRAL': 'Aves de corral'
+}
+
 PieCenterLabel.propTypes = {
   primaryText: PropTypes.string.isRequired,
   secondaryText: PropTypes.string.isRequired,
@@ -95,7 +103,7 @@ export default function ChartUserBySpecies() {
         const especies = [...new Set(animalesData.map(animal => animal.ESPECIE))]; // Obtener especies únicas
         const newData = especies.map(especie => {
           const count = animalesData.filter(animal => animal.ESPECIE === especie).length;
-          return { label: especie, value: count };
+          return { label: custom[especie], value: count };
         });
 
         setData(newData);
