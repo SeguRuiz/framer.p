@@ -11,8 +11,40 @@ import NotificationsRoundedIcon from "@mui/icons-material/NotificationsRounded";
 import MenuButton from "./MenuButton";
 import MenuContent from "./MenuContent";
 import CardAlert from "./CardAlert";
+import { getCookie } from "../../utils/cookies";
+import { setCookie } from "../../utils/cookies";
+import ListItemIcon, { listItemIconClasses } from "@mui/material/ListItemIcon";
+import { useNavigate } from "react-router";
+import ListItemText from "@mui/material/ListItemText";
+import GetUsuarios, {
+  GetUsuario,
+} from "../../services/Usuarios/GetUsuarios.jsx";
+import { MenuItem } from "@mui/material";
 
 function SideMenuMobile({ open, toggleDrawer }) {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const navigate= useNavigate()
+   const userInfo = atob(getCookie("data"));
+    const [usuario, setUsuario] = React.useState({
+      NOMBRE: "",
+      CORREO: "",
+    });
+     React.useEffect(() => {
+        (async () => {
+          
+          
+          const usuario = await GetUsuario(userInfo);
+    
+          if (usuario[0] == 200) {
+            setUsuario(usuario[1]);
+          }
+        })();
+      }, [userInfo]);
+        const logOut = () => {
+          setAnchorEl(null);
+          setCookie("data", null, 0);
+          navigate("/");
+        };
   return (
     <Drawer
       anchor="right"
@@ -37,34 +69,37 @@ function SideMenuMobile({ open, toggleDrawer }) {
             direction="row"
             sx={{ gap: 1, alignItems: "center", flexGrow: 1, p: 1 }}
           >
-            <Avatar
-              sizes="small"
-              alt="Riley Carter"
-              src="/static/images/avatar/7.jpg"
-              sx={{ width: 24, height: 24 }}
-            />
+            <Avatar sizes="small" sx={{ width: 36, height: 36 }} src="error" alt={usuario.NOMBRE}>
+         
+         </Avatar>
+           
             <Typography component="p" variant="h6">
-              Riley Carter
+              {usuario.NOMBRE}
             </Typography>
           </Stack>
-          <MenuButton showBadge>
-            <NotificationsRoundedIcon />
-          </MenuButton>
+ 
         </Stack>
         <Divider />
         <Stack sx={{ flexGrow: 1 }}>
           <MenuContent />
           <Divider />
         </Stack>
-        <CardAlert />
+       
         <Stack sx={{ p: 2 }}>
-          <Button
-            variant="outlined"
-            fullWidth
-            startIcon={<LogoutRoundedIcon />}
-          >
-            Logout
-          </Button>
+        <MenuItem
+          onClick={logOut}
+          sx={{
+            [`& .${listItemIconClasses.root}`]: {
+              ml: "auto",
+              minWidth: 20,
+            },
+          }}
+        >
+          <ListItemText>Cerrar Sesion</ListItemText>
+          <ListItemIcon>
+            <LogoutRoundedIcon fontSize="small" />
+          </ListItemIcon>
+        </MenuItem>
         </Stack>
       </Stack>
     </Drawer>
