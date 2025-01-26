@@ -54,7 +54,7 @@ export default function PageViewsBarChart() {
             </Typography>
           </Stack>
           <Typography variant="caption" sx={{ color: 'text.secondary' }}>
-            Pesos de los animales y su estado de salud
+            Peso De Nuestro Ganado
           </Typography>
         </Stack>
 

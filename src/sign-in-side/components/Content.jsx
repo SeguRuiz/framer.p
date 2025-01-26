@@ -6,42 +6,47 @@ import AutoFixHighRoundedIcon from '@mui/icons-material/AutoFixHighRounded';
 import ConstructionRoundedIcon from '@mui/icons-material/ConstructionRounded';
 import SettingsSuggestRoundedIcon from '@mui/icons-material/SettingsSuggestRounded';
 import ThumbUpAltRoundedIcon from '@mui/icons-material/ThumbUpAltRounded';
-import { SitemarkIcon } from './CustomIcons.jsx';
+import { SitemarkIcon} from './CustomIcons.jsx';
+import { Logo } from './CustomIcons.jsx';
 
 const items = [
   {
     icon: <SettingsSuggestRoundedIcon sx={{ color: 'text.secondary' }} />,
-    title: 'Adaptable performance',
+    title: 'Monitoreo Integral',
     description:
-      'Our product effortlessly adjusts to your needs, boosting efficiency and simplifying your tasks.',
+      'Ingresa a nuestra plataforma para monitorear la salud, ubicación y productividad de tus animales de manera eficiente..',
   },
   {
     icon: <ConstructionRoundedIcon sx={{ color: 'text.secondary' }} />,
-    title: 'Built to last',
+    title: 'Durabilidad y Precisión',
     description:
-      'Experience unmatched durability that goes above and beyond with lasting investment.',
+      'Con funcionalidades avanzadas como mapas interactivos, alertas automáticas y reportes detallados',
   },
   {
     icon: <ThumbUpAltRoundedIcon sx={{ color: 'text.secondary' }} />,
-    title: 'Great user experience',
+    title: 'Gestión Eficientee',
     description:
-      'Integrate our product into your routine with an intuitive and easy-to-use interface.',
+      ' Podrás optimizar la gestión de tu ganado y tomar decisiones informadas.',
   },
   {
     icon: <AutoFixHighRoundedIcon sx={{ color: 'text.secondary' }} />,
-    title: 'Innovative functionality',
+    title: 'Innovación para el Futuro',
     description:
-      'Stay ahead with features that set new standards, addressing your evolving needs better than the rest.',
+      '¡Simplifica tu día a día con nuestra solución tecnológica diseñada para el sector ganadero!.',
   },
 ];
 
 export default function Content() {
   return (
+  
+    
     <Stack
       sx={{ flexDirection: 'column', alignSelf: 'center', gap: 4, maxWidth: 450 }}
     >
       <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
         <SitemarkIcon />
+       
+        
       </Box>
       {items.map((item, index) => (
         <Stack key={index} direction="row" sx={{ gap: 2 }}>

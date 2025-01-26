@@ -104,7 +104,7 @@ export default function MainGrid() {
       </Grid2>
 
       <Typography component="h2" variant="h6" sx={{ mb: 2 }}>
-        Details
+        Detalles
       </Typography>
       <Grid2 container spacing={2} columns={12}>
         <Grid2 item xs={12} lg={9}>

@@ -10,15 +10,15 @@ import {
   ThemeProvider,
   useTheme,
   useMediaQuery,
-  Divider,
+  
   Card,
-  CardHeader,
+ 
 } from "@mui/material";
 import { useScrollTrigger } from "@mui/material";
-import DeveloperBoardSharpIcon from "@mui/icons-material/DeveloperBoardSharp";
-import BugReportIcon from "@mui/icons-material/BugReport";
-import EmailIcon from "@mui/icons-material/Email";
 import { useNavigate } from "react-router";
+import { Logo } from "../sign-in-side/components/CustomIcons";
+import vacalogo from '../Img/vacalogo.png'
+
 
 const theme = createTheme({
   components: {
@@ -45,6 +45,7 @@ function HideOnScroll({ window, children }) {
 }
 
 const Navbar = ({ window, currentPath, Pages = [] }) => {
+
   const theme2 = useTheme();
   const es_PantallaPequeña = useMediaQuery(theme2.breakpoints.down("sm"));
   const navigate = useNavigate();
@@ -59,7 +60,11 @@ const Navbar = ({ window, currentPath, Pages = [] }) => {
         >
           <Container maxWidth="xl" sx={{ width: "100%", display: "flex" }}>
             <Toolbar sx={{ gap: "15px" }} disableGutters>
-              <DeveloperBoardSharpIcon fontSize="large" />
+               <img
+                     width={100}
+                     height={80}
+                    src={vacalogo}
+                   ></img>
 
               {!es_PantallaPequeña && (
                 <Typography
@@ -73,7 +78,7 @@ const Navbar = ({ window, currentPath, Pages = [] }) => {
                   
                   }}
                 >
-                  Componentes
+                 <Logo/>
                 </Typography>
               )}
             </Toolbar>
