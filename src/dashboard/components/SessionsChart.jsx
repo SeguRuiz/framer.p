@@ -72,21 +72,7 @@ export default function SessionsChart() {
     theme.palette.primary.dark,
   ];
 
-  React.useEffect(() => {
-    (async () => {
-     const animales =  await getAnimalesDeUsuario(userId)
-     console.log(animales);
-     
-      const RMS = [];
-      // const animales = await GetAnimales();
-
-      // animales.forEach((e) => {
-      //   RMS.push(e.RM);
-      // });
-
-      // setAnimales(RMS);
-    })();
-  }, []);
+ 
 
   return (
     <Card variant="outlined" sx={{ width: "100%" }}>
