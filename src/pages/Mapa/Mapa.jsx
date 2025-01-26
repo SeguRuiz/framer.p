@@ -127,6 +127,7 @@ const Mapa = () => {
               id: fincaData.id,
               coordinates: fincaData.UBICACION,
             });
+            
             listaDeAnimales.push(fincaData.ANIMALES);
             seenFincas.add(fincaId); // Marcamos esta finca como solicitada
             safetyCounter++;
